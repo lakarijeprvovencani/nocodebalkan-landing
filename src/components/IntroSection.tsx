@@ -72,8 +72,8 @@ const IntroSection: React.FC = () => {
                 ease: "easeInOut"
               }}
             />
-            <div className="relative bg-gray-900 px-8 py-6 rounded-xl">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl text-center font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-relaxed">
+            <div className="relative bg-gray-900 px-4 md:px-8 py-4 md:py-6 rounded-xl">
+              <h2 className="text-lg md:text-3xl lg:text-4xl text-center font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-relaxed">
                 Sada svako može da nauči da pravi aplikacije i web sajtove koristeći no-code alate
               </h2>
             </div>
