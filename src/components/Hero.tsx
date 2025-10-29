@@ -4,7 +4,7 @@ import { Layers, Sparkles, GraduationCap, Bird } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative min-h-[70vh] md:min-h-screen bg-gray-900 flex items-center justify-center overflow-hidden py-16 md:py-0">
+    <div className="relative min-h-[70vh] md:min-h-screen bg-gray-900 flex items-center justify-center overflow-hidden pt-16 pb-8 md:py-0">
       {/* Animated background elements */}
       <motion.div 
         className="absolute inset-0"

@@ -14,7 +14,7 @@ const IntroSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-900 pt-0 md:pt-8 pb-24 relative overflow-hidden">
+    <section className="bg-gray-900 pt-4 md:pt-8 pb-24 relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute top-0 left-0 w-full h-full"
@@ -53,13 +53,13 @@ const IntroSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Gradient Banner Title */}
         <motion.div
-          className="relative mb-6 md:mb-16 max-w-5xl mx-auto"
+          className="relative mb-3 md:mb-16 max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-1 rounded-2xl overflow-hidden">
+          <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-0.5 md:p-1 rounded-xl md:rounded-2xl overflow-hidden">
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-50 blur-xl"
               animate={{
@@ -72,8 +72,8 @@ const IntroSection: React.FC = () => {
                 ease: "easeInOut"
               }}
             />
-            <div className="relative bg-gray-900 px-4 md:px-8 py-4 md:py-6 rounded-xl">
-              <h2 className="text-lg md:text-3xl lg:text-4xl text-center font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-relaxed">
+            <div className="relative bg-gray-900 px-3 md:px-8 py-2 md:py-6 rounded-lg md:rounded-xl">
+              <h2 className="text-sm md:text-3xl lg:text-4xl text-center font-semibold md:font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-snug md:leading-relaxed">
                 Sada svako može da nauči da pravi aplikacije i web sajtove koristeći no-code alate
               </h2>
             </div>
