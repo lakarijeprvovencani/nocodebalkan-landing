@@ -20,7 +20,7 @@ const instructors: Instructor[] = [
     title: "No-Code Developer & Edukator",
     description: "Osnivač digitalne marketing agencije YourSalesWorld i No-Code developer. Nemanja je napravio mnoštvo No-Code sajtova u svojoj agenciji u prethodnih 6 godina i nekoliko No-Code aplikacija kako za domaće tako i za inostrano tržište, od kojih se za naše tržište ističe Masterbox AI.",
     achievements: [
-      "Preko 1500 edukovanih polaznika",
+      "Preko 10.000 edukovanih polaznika",
       "Predavač na Masterbox i Udemy",
       "Stručnjak za No-Code razvoj"
     ],
