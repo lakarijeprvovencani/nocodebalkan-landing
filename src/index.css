@@ -26,7 +26,14 @@ body {
 /* Disable entry animations on mobile to prevent janky appearance */
 @media (max-width: 768px) {
   * {
-    animation-duration: 0s !important;
+    /* Disable transitions used for entry animations */
     transition-duration: 0s !important;
+  }
+  
+  /* Disable Framer Motion initial/animate transitions but keep looping animations */
+  [style*="opacity: 0"],
+  [style*="transform: translate"] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
