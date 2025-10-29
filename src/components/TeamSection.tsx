@@ -212,7 +212,8 @@ const TeamSection: React.FC = () => {
                 alt="No Code Balkan Tim" 
                 className="w-full h-full object-cover aspect-[4/3]"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent p-6">
+              {/* Desktop overlay - hidden on mobile */}
+              <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent p-6">
                 <p className="text-gray-300 italic mb-2 text-lg">
                   "Rasla je jedna sasvim drugačija generacija mladih ljudi"
                 </p>
@@ -223,6 +224,19 @@ const TeamSection: React.FC = () => {
                   Vlada, Nemanja, Nikola i Ilija
                 </p>
               </div>
+            </div>
+
+            {/* Mobile text - shown below image on mobile only */}
+            <div className="md:hidden mt-4 p-4 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700">
+              <p className="text-gray-300 italic mb-2 text-base">
+                "Rasla je jedna sasvim drugačija generacija mladih ljudi"
+              </p>
+              <p className="text-white font-medium">
+                Tvoji predavači:
+              </p>
+              <p className="text-purple-400 font-bold">
+                Vlada, Nemanja, Nikola i Ilija
+              </p>
             </div>
           </motion.div>
         </div>
