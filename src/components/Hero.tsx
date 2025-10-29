@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
               </p>
               
               {/* Coffee animation - mobile only, below text */}
-              <div className="md:hidden mt-6 flex justify-center">
+              <div className="md:hidden mt-10 flex justify-center">
                 <motion.div
                   className="relative w-20 h-20"
                   animate={{
