@@ -14,7 +14,7 @@ const IntroSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-900 pt-8 pb-24 relative overflow-hidden">
+    <section className="bg-gray-900 pt-0 md:pt-8 pb-24 relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute top-0 left-0 w-full h-full"
@@ -53,7 +53,7 @@ const IntroSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Gradient Banner Title */}
         <motion.div
-          className="relative mb-16 max-w-5xl mx-auto"
+          className="relative mb-6 md:mb-16 max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -82,7 +82,7 @@ const IntroSection: React.FC = () => {
 
         {/* Video Container */}
         <motion.div 
-          className="relative max-w-4xl mx-auto mb-24 group"
+          className="relative max-w-4xl mx-auto mb-12 md:mb-24 group"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

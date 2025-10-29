@@ -85,56 +85,6 @@ const Hero: React.FC = () => {
               <p className="mt-4 text-gray-400 text-sm md:text-base">
                 Cena je manja od jedne kafe dnevno. Odjavi se kad god hoćeš.
               </p>
-              
-              {/* Coffee animation - mobile only, below text */}
-              <div className="md:hidden mt-10 flex justify-center">
-                <motion.div
-                  className="relative w-20 h-20"
-                  animate={{
-                    y: [0, -6, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  {/* Coffee cup */}
-                  <div className="absolute inset-0">
-                    {/* Cup body */}
-                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-14 h-12 bg-gradient-to-b from-amber-600 to-amber-700 rounded-b-2xl border-3 border-amber-800" />
-                    {/* Coffee liquid */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-12 h-7 bg-gradient-to-b from-amber-900 to-amber-950 rounded-b-xl" />
-                    {/* Handle */}
-                    <div className="absolute right-2 bottom-5 w-5 h-7 border-3 border-amber-700 rounded-r-full border-l-0" />
-                    {/* Saucer */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-2.5 bg-amber-800 rounded-full" />
-                  </div>
-                  
-                  {/* Steam */}
-                  {[0, 1, 2].map((i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute top-0 left-1/2 w-1.5 h-5 bg-gradient-to-t from-gray-400 to-transparent rounded-full"
-                      style={{ 
-                        left: `${50 + (i - 1) * 20}%`,
-                        filter: 'blur(1.5px)'
-                      }}
-                      animate={{
-                        y: [-15, -30],
-                        opacity: [0.8, 0],
-                        scale: [1, 0.5]
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        delay: i * 0.3,
-                        ease: "easeOut"
-                      }}
-                    />
-                  ))}
-                </motion.div>
-              </div>
             </motion.div>
           </motion.div>
 
