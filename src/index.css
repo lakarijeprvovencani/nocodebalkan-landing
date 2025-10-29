@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  background-color: #111827;
+}
+
+body {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  background-color: #111827;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  background-color: #111827;
+}

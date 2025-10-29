@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAT Disclaimer - No Code Balkan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .content-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        p {
+            text-align: justify;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #d1d1d1;
+        }
+        
+        .serbian-text {
+            color: #ff6b6b;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            margin: 30px 0;
+        }
+        
+        .close-btn {
+            display: block;
+            margin: 30px auto 0;
+            padding: 12px 32px;
+            background: linear-gradient(135deg, #9333ea 0%, #ec4899 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(147, 51, 234, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content-box {
+                padding: 24px;
+            }
+            
+            p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VAT Disclaimer</h1>
+        
+        <div class="content-box">
+            <div class="section">
+                <p>
+                    Ordering on our website may include your obligation to pay applicable taxes upon receiving the product/s. You will be responsible for paying it to the relevant tax authority. You will be taxed according to the country that you purchase from or your organization is registered in. Tax rates differ between countries and are subject to change from time to time. If you are in any doubt as to whether you are eligible to receive goods or services and pay for VAT you should consult your local VAT office before ordering. We cannot guarantee the accuracy of the legal information provided to you or apply the law to the facts of your specific situation.
+                </p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="section">
+                <p class="serbian-text">
+                    Naručivanje na našem sajtu može podrazumevati obavezu plaćanja primenjivih poreza prilikom prijema proizvoda. Vi ćete biti odgovorni za plaćanje istih nadležnom poreskom vlasti. Bićete oporezovani iz zemlje kupovine ili u kojoj je registrovana vaša organizacija. Stope poreza se razlikuju između zemalja i podložne su promenama s vremena na vreme. Ako imate bilo kakvu sumnju da li ste ovlašćeni da primite robu ili usluge i platite PDV, trebalo bi da se obratite lokalnom poreznom uredu za PDV pre nego što naručite. Ne možemo garantovati tačnost pruženih pravnih informacija niti primeniti zakon na činjenice vaše specifične situacije
+                </p>
+            </div>
+        </div>
+        
+        <button class="close-btn" onclick="window.close()">Zatvori</button>
+    </div>
+</body>
+</html>
+
