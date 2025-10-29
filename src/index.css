@@ -22,3 +22,11 @@ body {
   overflow-x: hidden;
   background-color: #111827;
 }
+
+/* Disable entry animations on mobile to prevent janky appearance */
+@media (max-width: 768px) {
+  * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
