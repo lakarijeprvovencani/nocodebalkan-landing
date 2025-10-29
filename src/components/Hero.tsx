@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.p 
-              className="text-purple-400 text-2xl md:text-3xl mb-4"
+              className="text-purple-400 text-2xl md:text-4xl mb-4"
               style={{ fontFamily: 'Caveat, cursive' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
               Želiš da napraviš promenu u svojoj karijeri?
             </motion.p>
             <motion.h1 
-              className="text-4xl md:text-6xl font-bold text-white mb-6"
+              className="text-4xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               Zaradi programersku platu.
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-blue-300 mb-8"
+              className="text-xl md:text-3xl text-blue-300 mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -78,11 +78,11 @@ const Hero: React.FC = () => {
             >
               <a 
                 href="https://nocodebalkan.thinkific.com/order?ct=b23d954d-15c7-402b-ad0f-9fff6b075e6d" target="_blank" rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:from-blue-600 hover:to-purple-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
+                className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 md:px-10 md:py-5 rounded-lg text-lg md:text-xl font-medium hover:from-blue-600 hover:to-purple-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
               >
                 Želim da naučim kako
               </a>
-              <p className="mt-4 text-gray-400 text-sm">
+              <p className="mt-4 text-gray-400 text-sm md:text-base">
                 Cena je manja od jedne kafe dnevno. Odjavi se kad god hoćeš.
               </p>
               
@@ -145,8 +145,8 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            <div className="relative w-full max-w-md">
-              <div className="grid grid-cols-2 gap-4 p-4">
+            <div className="relative w-full max-w-xl">
+              <div className="grid grid-cols-2 gap-6 p-4">
                 {[
                   { Icon: Layers, label: "No code", iconColor: "text-blue-400", bgGradient: "from-blue-500/20 to-cyan-500/20" },
                   { Icon: Sparkles, label: "AI", iconColor: "text-purple-400", bgGradient: "from-purple-500/20 to-pink-500/20" },
@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className={`bg-gradient-to-br ${item.bgGradient} backdrop-blur-sm rounded-xl p-6 flex flex-col items-center justify-center gap-3 border border-gray-700/50 hover:border-gray-600 transition-colors`}
+                    className={`bg-gradient-to-br ${item.bgGradient} backdrop-blur-sm rounded-2xl p-8 flex flex-col items-center justify-center gap-4 border border-gray-700/50 hover:border-gray-600 transition-colors`}
                     whileHover={{ scale: 1.1, y: -8 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -173,9 +173,9 @@ const Hero: React.FC = () => {
                         ease: "easeInOut"
                       }}
                     >
-                      <item.Icon className={`w-12 h-12 ${item.iconColor}`} />
+                      <item.Icon className={`w-16 h-16 ${item.iconColor}`} />
                     </motion.div>
-                    <span className="text-white font-medium text-center">{item.label}</span>
+                    <span className="text-white font-medium text-lg text-center">{item.label}</span>
                   </motion.div>
                 ))}
               </div>
