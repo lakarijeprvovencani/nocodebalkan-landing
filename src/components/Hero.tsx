@@ -82,60 +82,58 @@ const Hero: React.FC = () => {
               >
                 Želim da naučim kako
               </a>
-              <div className="mt-4 flex items-center gap-2">
-                <p className="text-gray-400 text-sm">
-                  Cena je manja od jedne kafe dnevno. Odjavi se kad god hoćeš.
-                </p>
-                
-                {/* Coffee animation - mobile only */}
-                <div className="md:hidden relative">
-                  <motion.div
-                    className="relative w-8 h-8"
-                    animate={{
-                      y: [0, -3, 0],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    {/* Coffee cup */}
-                    <div className="absolute inset-0">
-                      {/* Cup body */}
-                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-5 bg-gradient-to-b from-amber-600 to-amber-700 rounded-b-lg border-2 border-amber-800" />
-                      {/* Coffee liquid */}
-                      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-5 h-3 bg-gradient-to-b from-amber-900 to-amber-950 rounded-b-md" />
-                      {/* Handle */}
-                      <div className="absolute right-0 bottom-1 w-2 h-3 border-2 border-amber-700 rounded-r-full border-l-0" />
-                      {/* Saucer */}
-                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1 w-7 h-1 bg-amber-800 rounded-full" />
-                    </div>
-                    
-                    {/* Steam */}
-                    {[0, 1, 2].map((i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute top-0 left-1/2 w-1 h-2 bg-gradient-to-t from-gray-400 to-transparent rounded-full"
-                        style={{ 
-                          left: `${50 + (i - 1) * 15}%`,
-                          filter: 'blur(1px)'
-                        }}
-                        animate={{
-                          y: [-8, -16],
-                          opacity: [0.8, 0],
-                          scale: [1, 0.5]
-                        }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          delay: i * 0.3,
-                          ease: "easeOut"
-                        }}
-                      />
-                    ))}
-                  </motion.div>
-                </div>
+              <p className="mt-4 text-gray-400 text-sm">
+                Cena je manja od jedne kafe dnevno. Odjavi se kad god hoćeš.
+              </p>
+              
+              {/* Coffee animation - mobile only, below text */}
+              <div className="md:hidden mt-4 flex justify-center">
+                <motion.div
+                  className="relative w-12 h-12"
+                  animate={{
+                    y: [0, -4, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  {/* Coffee cup */}
+                  <div className="absolute inset-0">
+                    {/* Cup body */}
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-8 h-7 bg-gradient-to-b from-amber-600 to-amber-700 rounded-b-xl border-2 border-amber-800" />
+                    {/* Coffee liquid */}
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-7 h-4 bg-gradient-to-b from-amber-900 to-amber-950 rounded-b-lg" />
+                    {/* Handle */}
+                    <div className="absolute right-1 bottom-3 w-3 h-4 border-2 border-amber-700 rounded-r-full border-l-0" />
+                    {/* Saucer */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-1.5 bg-amber-800 rounded-full" />
+                  </div>
+                  
+                  {/* Steam */}
+                  {[0, 1, 2].map((i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute top-0 left-1/2 w-1 h-3 bg-gradient-to-t from-gray-400 to-transparent rounded-full"
+                      style={{ 
+                        left: `${50 + (i - 1) * 20}%`,
+                        filter: 'blur(1px)'
+                      }}
+                      animate={{
+                        y: [-10, -20],
+                        opacity: [0.8, 0],
+                        scale: [1, 0.5]
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        delay: i * 0.3,
+                        ease: "easeOut"
+                      }}
+                    />
+                  ))}
+                </motion.div>
               </div>
             </motion.div>
           </motion.div>
