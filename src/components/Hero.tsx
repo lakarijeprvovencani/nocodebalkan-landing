@@ -42,12 +42,13 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left content */}
           <motion.div
+            className="text-center md:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.p 
-              className="text-purple-400 text-2xl md:text-4xl mb-4"
+              className="text-purple-400 text-xl md:text-4xl mb-3 md:mb-4 italic"
               style={{ fontFamily: 'Caveat, cursive' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -56,7 +57,7 @@ const Hero: React.FC = () => {
               Želiš da napraviš promenu u svojoj karijeri?
             </motion.p>
             <motion.h1 
-              className="text-3xl md:text-7xl lg:text-8xl font-bold text-white mb-4"
+              className="text-3xl md:text-7xl lg:text-8xl font-bold text-white mb-3 md:mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -64,7 +65,7 @@ const Hero: React.FC = () => {
               Zaradi programersku platu.
             </motion.h1>
             <motion.p 
-              className="text-lg md:text-3xl text-blue-300 mb-6"
+              className="text-base md:text-3xl text-blue-300 mb-0 md:mb-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -75,6 +76,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
+              className="hidden md:block"
             >
               <a 
                 href="https://nocodebalkan.thinkific.com/order?ct=b23d954d-15c7-402b-ad0f-9fff6b075e6d" target="_blank" rel="noopener noreferrer"

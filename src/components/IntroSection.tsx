@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Clock, DollarSign, Sparkles, Play } from 'lucide-react';
+import { Clock, DollarSign, Sparkles, Play, ArrowRight } from 'lucide-react';
 
 const IntroSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -82,7 +82,7 @@ const IntroSection: React.FC = () => {
 
         {/* Video Container */}
         <motion.div 
-          className="relative max-w-4xl mx-auto mb-8 md:mb-24 group"
+          className="relative max-w-4xl mx-auto mb-6 md:mb-24 group"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -133,8 +133,8 @@ const IntroSection: React.FC = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
-                      <Play className="w-10 h-10 text-white ml-1" />
+                    <div className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
+                      <Play className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" />
                     </div>
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-xl opacity-50"
@@ -153,6 +153,25 @@ const IntroSection: React.FC = () => {
               )}
             </div>
           </div>
+        </motion.div>
+
+        {/* CTA Button - Mobile Only (below video) */}
+        <motion.div
+          className="flex md:hidden justify-center mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <a 
+            href="https://nocodebalkan.thinkific.com/order?ct=b23d954d-15c7-402b-ad0f-9fff6b075e6d" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-base font-medium rounded-xl hover:from-blue-600 hover:to-purple-700 transform transition-all duration-300 active:scale-95 shadow-lg shadow-purple-500/20"
+          >
+            Želim da naučim kako!
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </a>
         </motion.div>
 
         {/* Benefits */}
