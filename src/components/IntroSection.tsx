@@ -14,7 +14,7 @@ const IntroSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-900 pt-0 md:pt-8 pb-16 md:pb-24 relative overflow-hidden z-50">
+    <section className="bg-gray-900 pt-0 md:pt-8 pb-16 md:pb-24 relative overflow-hidden z-[100]">
       {/* Animated background elements - Hidden on mobile to avoid color differences */}
       <motion.div 
         className="absolute top-0 left-0 w-full h-full hidden md:block"
@@ -53,13 +53,14 @@ const IntroSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[100]">
         {/* Gradient Banner Title */}
         <motion.div
-          className="relative -mt-4 md:mt-0 mb-2 md:mb-16 max-w-5xl mx-auto z-[200]"
+          className="relative -mt-4 md:mt-0 mb-2 md:mb-16 max-w-5xl mx-auto z-[999]"
+          style={{ position: 'relative', zIndex: 999 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-0.5 md:p-1 rounded-xl md:rounded-2xl overflow-hidden">
+          <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-0.5 md:p-1 rounded-xl md:rounded-2xl overflow-hidden z-[999]">
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-50 blur-xl"
               animate={{
