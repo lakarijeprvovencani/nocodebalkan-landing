@@ -53,7 +53,7 @@ const IntroSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Gradient Banner Title */}
         <motion.div
-          className="relative -mt-6 mb-4 md:mt-0 md:mb-16 max-w-5xl mx-auto"
+          className="relative -mt-6 mb-4 md:mt-0 md:mb-16 max-w-5xl mx-auto z-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
