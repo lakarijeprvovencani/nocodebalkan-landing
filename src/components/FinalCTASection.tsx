@@ -41,7 +41,7 @@ const FinalCTASection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <motion.h2 
-            className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent mb-12"
+            className="text-3xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent mb-8 md:mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -56,13 +56,13 @@ const FinalCTASection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-4xl font-bold text-purple-400 mb-8">
+            <h3 className="text-2xl md:text-4xl font-bold text-purple-400 mb-6 md:mb-8">
               Spreman si?
             </h3>
 
             <motion.a
               href="https://nocodebalkan.thinkific.com/order?ct=b23d954d-15c7-402b-ad0f-9fff6b075e6d" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center px-12 py-6 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white text-2xl font-medium rounded-2xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group relative overflow-hidden"
+              className="inline-flex items-center px-8 py-4 md:px-12 md:py-6 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white text-lg md:text-2xl font-medium rounded-2xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group relative overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
