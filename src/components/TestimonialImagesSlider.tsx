@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Import all testimonial images
@@ -85,7 +85,7 @@ const TestimonialImagesSlider: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
@@ -117,15 +117,15 @@ const TestimonialImagesSlider: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-3 md:mb-4">
             Šta naši članovi kažu
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-base md:text-xl text-gray-300">
             Pročitaj iskustva onih koji su već počeli svoju no-code transformaciju
           </p>
         </motion.div>
@@ -139,34 +139,49 @@ const TestimonialImagesSlider: React.FC = () => {
           transition={{ delay: 0.2 }}
         >
           {/* Main Image Display */}
-          <div className="relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-purple-500/20 shadow-2xl">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentIndex}
-                src={testimonialImages[currentIndex]}
-                alt={`Testimonial ${currentIndex + 1}`}
-                className="w-full h-full object-contain"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.5 }}
-              />
-            </AnimatePresence>
+          <div className="relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-purple-500/20 shadow-2xl mb-4 md:mb-0">
+            <motion.img
+              key={currentIndex}
+              src={testimonialImages[currentIndex]}
+              alt={`Testimonial ${currentIndex + 1}`}
+              className="w-full h-full object-contain"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+            />
 
-            {/* Navigation Arrows */}
+            {/* Navigation Arrows - Desktop (Side) */}
             <button
               onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-gray-900/80 text-white hover:bg-purple-600 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:scale-110"
+              className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-gray-900/80 text-white hover:bg-purple-600 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:scale-110"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-gray-900/80 text-white hover:bg-purple-600 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:scale-110"
+              className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-gray-900/80 text-white hover:bg-purple-600 transition-all duration-300 backdrop-blur-sm border border-white/10 hover:scale-110"
               aria-label="Next testimonial"
             >
               <ChevronRight size={24} />
+            </button>
+          </div>
+
+          {/* Navigation Arrows - Mobile (Bottom) */}
+          <div className="flex md:hidden justify-center items-center gap-4 mt-4">
+            <button
+              onClick={goToPrevious}
+              className="p-3 rounded-full bg-gray-900/80 text-white hover:bg-purple-600 transition-all duration-300 backdrop-blur-sm border border-white/10 active:scale-95"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={goToNext}
+              className="p-3 rounded-full bg-gray-900/80 text-white hover:bg-purple-600 transition-all duration-300 backdrop-blur-sm border border-white/10 active:scale-95"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={20} />
             </button>
           </div>
         </motion.div>
