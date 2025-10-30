@@ -156,7 +156,7 @@ const IntroSection: React.FC = () => {
         </motion.div>
 
         {/* Benefits */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
           {[
             {
               icon: Sparkles,
@@ -208,7 +208,7 @@ const IntroSection: React.FC = () => {
                 className={`absolute -inset-[2px] bg-gradient-to-br ${benefit.gradient} rounded-xl opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500`}
               />
 
-              <div className="relative bg-gray-800/90 backdrop-blur-sm rounded-xl p-8 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 overflow-hidden">
+              <div className="relative bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 md:p-8 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 overflow-hidden">
                 {/* Background shimmer effect */}
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
@@ -216,7 +216,7 @@ const IntroSection: React.FC = () => {
 
                 {/* Icon with enhanced effects */}
                 <motion.div 
-                  className="relative w-20 h-20 mb-6 rounded-2xl overflow-hidden"
+                  className="relative w-12 h-12 md:w-20 md:h-20 mb-4 md:mb-6 rounded-xl md:rounded-2xl overflow-hidden"
                   whileHover={{ scale: 1.15, rotate: 10 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
@@ -233,7 +233,7 @@ const IntroSection: React.FC = () => {
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-60 blur-2xl`} />
                   <div className="relative w-full h-full flex items-center justify-center">
-                    <benefit.icon className="w-10 h-10 text-white drop-shadow-lg" />
+                    <benefit.icon className="w-6 h-6 md:w-10 md:h-10 text-white drop-shadow-lg" />
                   </div>
                   
                   {/* Shine effect */}
@@ -251,17 +251,17 @@ const IntroSection: React.FC = () => {
                   />
                 </motion.div>
                 
-                <h3 className="text-2xl font-bold text-white mb-3 transition-all duration-300">
+                <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-3 transition-all duration-300">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-300 text-base group-hover:text-white transition-colors duration-300 leading-relaxed">
+                <p className="text-gray-300 text-sm md:text-base group-hover:text-white transition-colors duration-300 leading-relaxed">
                   {benefit.description}
                 </p>
 
                 {/* Corner decoration */}
-                <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden opacity-20">
+                <div className="absolute top-0 right-0 w-12 h-12 md:w-20 md:h-20 overflow-hidden opacity-20">
                   <motion.div
-                    className={`absolute w-40 h-40 bg-gradient-to-br ${benefit.gradient} rounded-full -top-20 -right-20`}
+                    className={`absolute w-24 h-24 md:w-40 md:h-40 bg-gradient-to-br ${benefit.gradient} rounded-full -top-12 -right-12 md:-top-20 md:-right-20`}
                     animate={{
                       scale: [1, 1.2, 1],
                     }}
