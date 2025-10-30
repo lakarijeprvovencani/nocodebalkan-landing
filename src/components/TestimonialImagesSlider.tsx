@@ -62,7 +62,7 @@ const TestimonialImagesSlider: React.FC = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonialImages.length);
-    }, 4000); // Change image every 4 seconds
+    }, 8000); // Change image every 8 seconds - more time to read testimonials
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
