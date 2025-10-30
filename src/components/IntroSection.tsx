@@ -14,7 +14,7 @@ const IntroSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-900 pt-2 md:pt-8 pb-24 relative overflow-hidden">
+    <section className="bg-gray-900 pt-0 md:pt-8 pb-24 relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute top-0 left-0 w-full h-full"
