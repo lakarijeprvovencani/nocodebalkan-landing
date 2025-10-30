@@ -13,7 +13,7 @@ const PricingSection: React.FC = () => {
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-gray-900 relative overflow-hidden">
+    <section id="pricing" className="py-12 md:py-24 bg-gray-900 relative overflow-hidden">
       {/* Background effects */}
       <motion.div 
         className="absolute inset-0"

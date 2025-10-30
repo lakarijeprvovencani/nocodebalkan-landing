@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const FinalCTASection: React.FC = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 via-purple-900/20 to-gray-900 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-gray-900 via-purple-900/20 to-gray-900 relative overflow-hidden">
       {/* Background effects */}
       <motion.div 
         className="absolute inset-0"

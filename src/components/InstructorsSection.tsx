@@ -63,7 +63,7 @@ const instructors: Instructor[] = [
 
 const InstructorsSection: React.FC = () => {
   return (
-    <section className="py-24 bg-gray-900 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gray-900 relative overflow-hidden">
       {/* Background decorative elements */}
       <motion.div 
         className="absolute inset-0"

@@ -98,7 +98,7 @@ const miniCourses: MiniCourse[] = [
 
 const MiniCoursesSection: React.FC = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 to-purple-900/50 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-gray-900 to-purple-900/50 relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute inset-0"
