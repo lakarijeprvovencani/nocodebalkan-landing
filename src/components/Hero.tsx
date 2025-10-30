@@ -4,7 +4,7 @@ import { Layers, Sparkles, GraduationCap, Bird } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative min-h-[60vh] md:min-h-screen bg-gray-900 flex items-center justify-center overflow-hidden pt-12 pb-0 md:py-0">
+    <div className="relative min-h-[60vh] md:min-h-screen bg-gray-900 flex items-center justify-center overflow-hidden pt-12 pb-2 md:py-0">
       {/* Animated background elements */}
       <motion.div 
         className="absolute inset-0"
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
               Želiš da napraviš promenu u svojoj karijeri?
             </motion.p>
             <motion.h1 
-              className="text-4xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
+              className="text-3xl md:text-7xl lg:text-8xl font-bold text-white mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               Zaradi programersku platu.
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-3xl text-blue-300 mb-8"
+              className="text-lg md:text-3xl text-blue-300 mb-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -78,11 +78,11 @@ const Hero: React.FC = () => {
             >
               <a 
                 href="https://nocodebalkan.thinkific.com/order?ct=b23d954d-15c7-402b-ad0f-9fff6b075e6d" target="_blank" rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 md:px-10 md:py-5 rounded-lg text-lg md:text-xl font-medium hover:from-blue-600 hover:to-purple-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
+                className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 text-base md:px-10 md:py-5 md:text-xl font-medium hover:from-blue-600 hover:to-purple-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
               >
                 Želim da naučim kako
               </a>
-              <p className="mt-4 text-gray-400 text-sm md:text-base">
+              <p className="mt-3 text-gray-400 text-sm md:text-base">
                 Cena je manja od jedne kafe dnevno. Odjavi se kad god hoćeš.
               </p>
             </motion.div>
