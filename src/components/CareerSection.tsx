@@ -31,7 +31,7 @@ const CareerSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-900 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gray-900 relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute inset-0"
@@ -66,9 +66,9 @@ const CareerSection: React.FC = () => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <motion.p 
-            className="text-2xl text-purple-400 mb-4"
+            className="text-lg md:text-2xl text-purple-400 mb-3 md:mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,7 +76,7 @@ const CareerSection: React.FC = () => {
             Hajde zajedno da
           </motion.p>
           <motion.h2 
-            className="text-4xl md:text-6xl font-bold text-white mb-8"
+            className="text-2xl md:text-6xl font-bold text-white mb-4 md:mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -85,7 +85,7 @@ const CareerSection: React.FC = () => {
             Menjamo tvoju karijeru
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -103,7 +103,7 @@ const CareerSection: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl filter blur-xl" />
-          <div className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 overflow-hidden">
+          <div className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 md:p-8 overflow-hidden">
             <div className="flex items-center justify-center">
               <motion.div 
                 className="flex items-center gap-4"
@@ -118,7 +118,7 @@ const CareerSection: React.FC = () => {
                 }}
               >
                 <motion.div 
-                  className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center"
+                  className="w-12 h-12 md:w-16 md:h-16 bg-blue-500/20 rounded-xl flex items-center justify-center"
                   whileHover={{ scale: 1.1 }}
                 >
                   <Blocks className="w-8 h-8 text-blue-400" />
@@ -130,7 +130,7 @@ const CareerSection: React.FC = () => {
                   <MousePointer2 className="w-6 h-6 text-purple-400" />
                 </motion.div>
                 <motion.div 
-                  className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center"
+                  className="w-12 h-12 md:w-16 md:h-16 bg-purple-500/20 rounded-xl flex items-center justify-center"
                   whileHover={{ scale: 1.1 }}
                 >
                   <Layers className="w-8 h-8 text-purple-400" />
@@ -140,7 +140,7 @@ const CareerSection: React.FC = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-8 md:mb-16">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -171,12 +171,12 @@ const CareerSection: React.FC = () => {
               />
 
               <motion.div
-                className="relative bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 group-hover:border-transparent transition-all duration-300 h-full flex flex-col"
+                className="relative bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-700/50 group-hover:border-transparent transition-all duration-300 h-full flex flex-col"
                 whileHover={{ y: -8 }}
               >
                 {/* Icon container with gradient and animation */}
                 <motion.div 
-                  className={`relative w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} p-0.5 mb-6`}
+                  className={`relative w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br ${feature.color} p-0.5 mb-4 md:mb-6`}
                   whileHover={{ rotate: [0, -5, 5, -5, 0] }}
                   transition={{ duration: 0.5 }}
                 >
@@ -216,10 +216,10 @@ const CareerSection: React.FC = () => {
                   </motion.div>
                 </motion.div>
 
-                <h3 className="text-xl font-bold text-white mb-3 transition-all duration-300">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 transition-all duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-300 text-base leading-relaxed flex-grow">
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed flex-grow">
                   {feature.description}
                 </p>
 
@@ -252,7 +252,7 @@ const CareerSection: React.FC = () => {
         >
           <motion.a
             href="https://nocodebalkan.thinkific.com/order?ct=b23d954d-15c7-402b-ad0f-9fff6b075e6d" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg text-lg shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group"
+            className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg text-base md:text-lg shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

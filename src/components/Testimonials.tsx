@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section className="py-24 bg-gray-900 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gray-900 relative overflow-hidden">
       <motion.div 
         className="absolute inset-0"
         initial={{ opacity: 0 }}
@@ -68,7 +68,7 @@ const Testimonials: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+          className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -81,7 +81,7 @@ const Testimonials: React.FC = () => {
           {/* Desktop timeline line - hidden on mobile */}
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 to-blue-500/50 hidden md:block" />
 
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-6 md:space-y-12">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
@@ -89,7 +89,7 @@ const Testimonials: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className={`flex flex-col md:flex-row items-center gap-8 ${
+                className={`flex flex-col md:flex-row items-center gap-4 md:gap-8 ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
@@ -150,7 +150,7 @@ const Testimonials: React.FC = () => {
                       }}
                     />
 
-                    <div className="relative bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 group-hover:border-transparent transition-all duration-300 overflow-hidden">
+                    <div className="relative bg-gray-800/80 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-gray-700/50 group-hover:border-transparent transition-all duration-300 overflow-hidden">
                       {/* Top right quote decoration */}
                       <motion.div 
                         className="absolute top-4 right-4"
@@ -164,8 +164,8 @@ const Testimonials: React.FC = () => {
                           ease: "easeInOut",
                         }}
                       >
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-purple-500/30">
-                          <Quote className="w-6 h-6 text-purple-400" />
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-purple-500/30">
+                          <Quote className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
                         </div>
                       </motion.div>
 
@@ -182,12 +182,12 @@ const Testimonials: React.FC = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 + star * 0.1 }}
                           >
-                            <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                            <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-yellow-400" />
                           </motion.div>
                         ))}
                       </div>
 
-                      <p className="text-gray-300 mb-6 text-base md:text-lg italic leading-relaxed relative z-10">
+                      <p className="text-sm md:text-lg text-gray-300 mb-4 md:mb-6 italic leading-relaxed relative z-10">
                         "{testimonial.text}"
                       </p>
                       
@@ -196,7 +196,7 @@ const Testimonials: React.FC = () => {
                           className="inline-block"
                           whileHover={{ scale: 1.05 }}
                         >
-                          <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
+                          <h3 className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
                             {testimonial.name}
                           </h3>
                           {/* Underline decoration */}

@@ -31,7 +31,7 @@ const WhySection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 via-purple-900/20 to-gray-900 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-gray-900 via-purple-900/20 to-gray-900 relative overflow-hidden">
       {/* Background effects */}
       <motion.div 
         className="absolute inset-0"
@@ -66,14 +66,14 @@ const WhySection: React.FC = () => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-16">
           {/* Left side - Text content */}
           <div className="w-full lg:w-1/2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-8 md:mb-12"
             >
               <motion.div 
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6"
@@ -83,17 +83,17 @@ const WhySection: React.FC = () => {
                 <span className="text-purple-400 font-medium">Zašto baš mi?</span>
               </motion.div>
               
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent mb-6">
+              <h2 className="text-2xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent mb-4 md:mb-6">
                 No Code Balkan je drugačiji
               </h2>
               
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8">
                 Mi nismo samo još jedna edukativna platforma. Mi smo zajednica ljudi koji veruju da svako može da nauči da kreira digitalne proizvode, bez obzira na prethodno iskustvo.
               </p>
 
               <motion.a
                 href="https://nocodebalkan.thinkific.com/order?ct=b23d954d-15c7-402b-ad0f-9fff6b075e6d" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group"
+                className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group text-sm md:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -105,7 +105,7 @@ const WhySection: React.FC = () => {
 
           {/* Right side - Features grid */}
           <div className="w-full lg:w-1/2">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {reasons.map((reason, index) => (
                 <motion.div
                   key={index}
@@ -120,17 +120,17 @@ const WhySection: React.FC = () => {
                     className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-xl opacity-0 group-hover:opacity-75 transition duration-300 blur"
                   />
                   
-                  <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                  <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
                     <motion.div 
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-r ${reason.color} p-2.5 mb-4`}
+                      className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-r ${reason.color} p-2 md:p-2.5 mb-3 md:mb-4`}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
                       <reason.icon className="w-full h-full text-white" />
                     </motion.div>
                     
-                    <h3 className="text-xl font-bold text-white mb-2">{reason.title}</h3>
-                    <p className="text-gray-300">{reason.description}</p>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-1 md:mb-2">{reason.title}</h3>
+                    <p className="text-sm md:text-base text-gray-300">{reason.description}</p>
                     
                     <motion.div
                       className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"

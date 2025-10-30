@@ -43,7 +43,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, ind
         className="absolute -inset-[2px] bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-xl opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500"
       />
 
-      <div className="relative bg-gray-800/95 backdrop-blur-sm rounded-xl p-6 shadow-lg transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 overflow-hidden h-full flex flex-col">
+      <div className="relative bg-gray-800/95 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-lg transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 overflow-hidden h-full flex flex-col">
         {/* Background glow on hover */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -51,12 +51,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, ind
 
         {/* Enhanced icon */}
         <motion.div 
-          className="relative rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-3 w-fit mb-4"
+          className="relative rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-2 md:p-3 w-fit mb-3 md:mb-4"
           whileHover={{ scale: 1.15, rotate: 360 }}
           transition={{ duration: 0.6, type: "spring", stiffness: 200 }}
         >
           <motion.div 
-            className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-3 text-white relative"
+            className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-2 md:p-3 text-white relative"
             animate={{
               boxShadow: [
                 "0 0 0px rgba(59, 130, 246, 0.5)",
@@ -88,10 +88,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, ind
           </motion.div>
         </motion.div>
 
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all duration-300 relative z-10">
+        <h3 className="text-base md:text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all duration-300 relative z-10">
           {title}
         </h3>
-        <p className="text-gray-300 group-hover:text-gray-100 transition-colors duration-300 relative z-10 flex-grow">
+        <p className="text-sm md:text-base text-gray-300 group-hover:text-gray-100 transition-colors duration-300 relative z-10 flex-grow">
           {description}
         </p>
 
@@ -144,7 +144,7 @@ const LearnSection: React.FC = () => {
   ];
 
   return (
-    <section id="learn" className="bg-gray-900 py-20 relative overflow-hidden">
+    <section id="learn" className="bg-gray-900 py-12 md:py-20 relative overflow-hidden">
       <motion.div 
         className="absolute inset-0"
         initial={{ opacity: 0 }}
@@ -183,12 +183,12 @@ const LearnSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+          className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
         >
           Šta možeš da naučiš?
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {features.map((feature, index) => (
             <FeatureCard 
               key={index}
