@@ -51,10 +51,9 @@ const IntroSection: React.FC = () => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[100]">
-        {/* Gradient Banner Title */}
+        {/* Gradient Banner Title - Desktop Only */}
         <motion.div
-          className="relative -mt-4 md:mt-0 mb-2 md:mb-16 max-w-5xl mx-auto z-[999]"
-          style={{ position: 'relative', zIndex: 999 }}
+          className="hidden md:block relative mt-0 mb-16 max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -81,9 +80,9 @@ const IntroSection: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Video Container */}
+        {/* Video Container - Desktop Only */}
         <motion.div 
-          className="relative max-w-4xl mx-auto mb-4 md:mb-24 group z-[150]"
+          className="hidden md:block relative max-w-4xl mx-auto mb-24 group"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -156,9 +155,9 @@ const IntroSection: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* CTA Button - Mobile Only (below video) */}
+        {/* CTA Button - Desktop Only */}
         <motion.div
-          className="flex md:hidden justify-center mb-8"
+          className="hidden md:flex justify-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

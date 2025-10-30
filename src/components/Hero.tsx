@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Layers, Sparkles, GraduationCap, Bird } from 'lucide-react';
+import { Layers, Sparkles, GraduationCap, Bird, Play, ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
   return (
     <div className="relative min-h-[50vh] md:min-h-screen bg-gray-900 flex items-center justify-center overflow-visible md:overflow-hidden pt-12 pb-4 md:py-0 z-[1]">
       {/* Animated background elements - Hidden on mobile to avoid color differences */}
@@ -65,7 +75,7 @@ const Hero: React.FC = () => {
               Zaradi programersku platu.
             </motion.h1>
             <motion.p 
-              className="text-base md:text-3xl text-blue-300 mb-0 md:mb-6"
+              className="text-base md:text-3xl text-blue-300 mb-4 md:mb-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -89,6 +99,121 @@ const Hero: React.FC = () => {
               </p>
             </motion.div>
           </motion.div>
+
+          {/* Mobile: Banner, Video, CTA - Only visible on mobile */}
+          <div className="md:hidden w-full mt-6">
+            {/* Banner */}
+            <motion.div
+              className="relative mb-4 max-w-5xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-0.5 rounded-xl overflow-hidden">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-50 blur-xl"
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    opacity: [0.3, 0.6, 0.3]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <div className="relative bg-gray-900 px-4 py-3 rounded-lg">
+                  <h2 className="text-sm font-medium text-center bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-snug">
+                    Sada svako može da nauči da pravi aplikacije i web sajtove koristeći no-code alate
+                  </h2>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Video */}
+            <motion.div
+              className="relative max-w-4xl mx-auto mb-4 group"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <motion.div
+                className="absolute -inset-[3px] bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-2xl blur-sm"
+                animate={{
+                  opacity: [0.4, 0.7, 0.4],
+                  scale: [1, 1.01, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900">
+                  <video
+                    ref={videoRef}
+                    className="w-full h-full object-cover"
+                    poster="https://cdn-cf-east.streamable.com/image/3xioho.jpg"
+                    controls={isPlaying}
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src="https://streamable.com/l/3xioho/mp4.mp4" type="video/mp4" />
+                    Vaš pretraživač ne podržava video.
+                  </video>
+                  
+                  {!isPlaying && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center cursor-pointer z-10"
+                      onClick={handlePlayClick}
+                    >
+                      <div className="absolute inset-0 bg-black/30"></div>
+                      <motion.div
+                        className="relative z-20"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
+                          <Play className="w-8 h-8 text-white ml-1" />
+                        </div>
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-xl opacity-50"
+                          animate={{
+                            scale: [1, 1.3, 1],
+                            opacity: [0.5, 0.3, 0.5]
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        />
+                      </motion.div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* CTA Button */}
+            <motion.div
+              className="flex justify-center mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >
+              <a 
+                href="https://nocodebalkan.thinkific.com/order?ct=b23d954d-15c7-402b-ad0f-9fff6b075e6d" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-base font-medium rounded-xl hover:from-blue-600 hover:to-purple-700 transform transition-all duration-300 active:scale-95 shadow-lg shadow-purple-500/20"
+              >
+                Želim da naučim kako!
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+            </motion.div>
+          </div>
 
           {/* Right side - Animated cards (Desktop Only) */}
           <motion.div 
