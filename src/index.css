@@ -23,16 +23,42 @@ body {
   background-color: #111827;
 }
 
-/* Disable entry animations on mobile to prevent janky appearance */
+/* Completely disable ALL animations and transitions on mobile to prevent flickering/janky scrolling */
 @media (max-width: 768px) {
-  * {
-    /* Disable transitions used for entry animations */
+  *, *::before, *::after {
+    /* Force disable all animations and transitions */
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
     transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    
+    /* Disable transform animations */
+    will-change: auto !important;
   }
   
-  /* Disable Framer Motion initial/animate transitions but keep looping animations */
-  [style*="opacity: 0"],
-  [style*="transform: translate"] {
+  /* Force all Framer Motion elements to be visible immediately */
+  [data-projection-id] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+  
+  /* Override any inline styles that hide elements */
+  [style*="opacity: 0"] {
+    opacity: 1 !important;
+  }
+  
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+  }
+  
+  /* Remove all transforms */
+  [style*="transform"] {
+    transform: none !important;
+  }
+  
+  /* Disable scroll-triggered animations */
+  [data-inviewport] {
     opacity: 1 !important;
     transform: none !important;
   }
