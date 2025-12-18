@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote, Star } from 'lucide-react';
+import nocodeekipaImg from '../assets/images/nocodeekipa.jpg';
 
 interface Testimonial {
   id: number;
@@ -34,12 +35,18 @@ const testimonials: Testimonial[] = [
 const Testimonials: React.FC = () => {
   return (
     <section className="py-12 md:py-24 bg-gray-900 relative overflow-hidden">
-      <motion.div 
-        className="absolute inset-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-      >
+      <div className="absolute inset-0">
+        {/* Background image with opacity overlay - Desktop only */}
+        <div 
+          className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${nocodeekipaImg})`,
+            opacity: 0.1
+          }}
+        />
+        {/* Dark overlay to maintain bg-gray-900 color */}
+        <div className="absolute inset-0 hidden md:block bg-gray-900/80" />
+        
         <motion.div 
           className="absolute top-1/4 -right-20 w-40 h-40 bg-purple-700/10 rounded-full filter blur-3xl"
           animate={{ 
@@ -64,176 +71,162 @@ const Testimonials: React.FC = () => {
             ease: "linear"
           }}
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.h2 
-          className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
+        <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           Šta su polaznici rekli o nama?
-        </motion.h2>
+        </h2>
 
-        <div className="relative">
-          {/* Desktop timeline line - hidden on mobile */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 to-blue-500/50 hidden md:block" />
+        {/* Desktop: Timeline Layout */}
+        <div className="hidden md:block relative">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/30 via-blue-500/30 to-purple-500/30" />
 
-          <div className="space-y-6 md:space-y-12">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                className={`flex flex-col md:flex-row items-center gap-4 md:gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Mobile timeline dot */}
-                <div className="md:hidden w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 relative mb-4">
-                  <div className="absolute inset-0 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 animate-ping" />
-                </div>
-
-                {/* Desktop timeline dot - hidden on mobile */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
-                  <motion.div 
-                    className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", stiffness: 300, delay: index * 0.2 }}
-                  >
-                    <div className="absolute inset-0 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 animate-ping" />
-                  </motion.div>
-                </div>
-
-                {/* Content */}
-                <div className={`w-full md:w-1/2 ${
-                  index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:pl-8'
-                }`}>
-                  <motion.div
-                    className="relative group"
-                    whileHover={{ y: -8 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    {/* Animated gradient border */}
-                    <motion.div
-                      className="absolute -inset-[2px] bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm"
-                      animate={{
-                        backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }}
-                      style={{
-                        backgroundSize: '200% 200%',
-                      }}
-                    />
-                    
-                    {/* Static pulsing border */}
-                    <motion.div
-                      className="absolute -inset-[1px] bg-gradient-to-br from-purple-500/40 via-pink-500/40 to-blue-500/40 rounded-2xl"
-                      animate={{
-                        opacity: [0.4, 0.7, 0.4],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.3,
-                      }}
-                    />
-
-                    <div className="relative bg-gray-800/80 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-gray-700/50 group-hover:border-transparent transition-all duration-300 overflow-hidden">
-                      {/* Top right quote decoration */}
-                      <motion.div 
-                        className="absolute top-4 right-4"
-                        animate={{
-                          rotate: [0, 5, -5, 0],
-                          scale: [1, 1.1, 1],
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
-                      >
-                        <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-purple-500/30">
-                          <Quote className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
-                        </div>
-                      </motion.div>
-
-                      {/* Background decoration */}
-                      <div className={`absolute ${index % 2 === 0 ? 'md:left-0' : 'md:right-0'} right-0 md:right-auto bottom-0 w-32 h-32 bg-gradient-to-tr from-purple-500/10 to-transparent rounded-full blur-2xl`} />
-                      
-                      {/* Stars decoration */}
-                      <div className="flex gap-1 mb-4 justify-start">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <motion.div
-                            key={star}
-                            initial={{ opacity: 0, scale: 0 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.2 + star * 0.1 }}
-                          >
-                            <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-yellow-400" />
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      <p className="text-sm md:text-lg text-gray-300 mb-4 md:mb-6 italic leading-relaxed relative z-10">
-                        "{testimonial.text}"
-                      </p>
-                      
-                      <div className="relative">
+          <div className="space-y-24">
+            {testimonials.map((testimonial, index) => {
+              const isLeft = index % 2 === 0;
+              
+              return (
+                <div
+                  key={testimonial.id}
+                  className="relative"
+                >
+                  <div className={`flex items-center ${isLeft ? 'justify-end' : 'justify-start'}`}>
+                    {/* Testimonial Card */}
+                    <div className={`w-5/12 ${isLeft ? 'pr-12' : 'pl-12'}`}>
+                      <div className="relative group">
+                        {/* Subtle pulsing border */}
                         <motion.div
-                          className="inline-block"
-                          whileHover={{ scale: 1.05 }}
-                        >
-                          <h3 className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
-                            {testimonial.name}
-                          </h3>
-                          {/* Underline decoration */}
-                          <motion.div
-                            className="h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 mt-1"
-                            initial={{ width: 0 }}
-                            whileInView={{ width: "100%" }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.2 + 0.5, duration: 0.8 }}
-                          />
-                        </motion.div>
-                      </div>
+                          className="absolute -inset-[1px] bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20 rounded-2xl"
+                          animate={{
+                            opacity: [0.3, 0.6, 0.3],
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        />
 
-                      {/* Corner sparkle */}
-                      <motion.div
-                        className={`absolute ${index % 2 === 0 ? 'md:left-4' : 'md:right-4'} right-4 md:right-auto bottom-4 opacity-50`}
-                        animate={{
-                          scale: [0.8, 1.2, 0.8],
-                          rotate: [0, 180, 360],
-                        }}
-                        transition={{
-                          duration: 4,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
-                      >
-                        <div className="w-2 h-2 bg-purple-400 rounded-full blur-sm" />
-                      </motion.div>
+                        <div className="relative bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 transition-all duration-300 group-hover:transform group-hover:-translate-y-2 overflow-hidden">
+                          {/* Background blur decoration */}
+                          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-500/5 to-blue-500/5 rounded-full blur-3xl" />
+                          
+                          {/* Top right quote decoration */}
+                          <div className="absolute top-4 right-4">
+                            <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-purple-500/30">
+                              <Quote className="w-6 h-6 text-purple-400" />
+                            </div>
+                          </div>
+
+                          {/* Stars decoration */}
+                          <div className="flex gap-1 mb-4 justify-start">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                              <Star key={star} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                            ))}
+                          </div>
+
+                          <p className="text-lg text-gray-300 mb-6 italic leading-relaxed relative z-10">
+                            "{testimonial.text}"
+                          </p>
+                          
+                          <div className="relative">
+                            <div className="inline-block">
+                              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
+                                {testimonial.name}
+                              </h3>
+                              <div className="h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 mt-1" />
+                            </div>
+                          </div>
+
+                          {/* Corner sparkle */}
+                          <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        </div>
+                      </div>
                     </div>
-                  </motion.div>
+
+                    {/* Timeline Dot */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2">
+                      <div className="relative">
+                        {/* Pulsing outer ring */}
+                        <motion.div
+                          className="absolute inset-0 w-6 h-6 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"
+                          animate={{
+                            scale: [1, 1.5, 1],
+                            opacity: [0.5, 0, 0.5],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        />
+                        
+                        {/* Main dot */}
+                        <div className="relative w-6 h-6 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full border-4 border-gray-900 shadow-lg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Mobile: Simple Vertical Stack */}
+        <div className="md:hidden space-y-6">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={testimonial.id}
+              className="relative group"
+            >
+              {/* Subtle pulsing border */}
+              <motion.div
+                className="absolute -inset-[1px] bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20 rounded-2xl"
+                animate={{
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
+              <div className="relative bg-gray-800/80 backdrop-blur-sm rounded-2xl p-4 border border-gray-700/50 overflow-hidden">
+                {/* Background blur decoration */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-500/5 to-blue-500/5 rounded-full blur-3xl" />
+                
+                {/* Top right quote decoration - Hidden on mobile */}
+                <div className="hidden md:block absolute top-4 right-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-purple-500/30">
+                    <Quote className="w-5 h-5 text-purple-400" />
+                  </div>
                 </div>
 
-                {/* Spacer - hidden on mobile */}
-                <div className="hidden md:block md:w-1/2" />
-              </motion.div>
-            ))}
-          </div>
+                {/* Stars decoration */}
+                <div className="flex gap-1 mb-4 justify-start">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+
+                <p className="text-sm text-gray-300 mb-4 italic leading-relaxed relative z-10">
+                  "{testimonial.text}"
+                </p>
+                
+                <div className="relative">
+                  <div className="inline-block">
+                    <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
+                      {testimonial.name}
+                    </h3>
+                    <div className="h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 mt-1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

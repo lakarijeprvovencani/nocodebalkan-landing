@@ -1,16 +1,208 @@
 <!doctype html>
-<html lang="en">
+<html lang="sr">
   <head>
+    <!-- Anti-flickering script -->
+    <script>
+    var  timeout = 3000; // Timeout value to remove the flicker (in milliseconds)
+
+    !function(h,i,d,e){var  t,n=h.createElement("style");n.id=e,n.innerHTML="body{opacity:0}",h.head.appendChild(n),t=d,i.rmfk=function(){var  t=h.getElementById(e);t&&t.parentNode.removeChild(t)},setTimeout(i.rmfk,t)}(document,window,timeout,"abhide");
+
+    </script>
+
+    <!-- Mida A/B Testing Script (Place in <HEAD> for speed & no flicker) -->
+    <script type="text/javascript" async src="https://cdn.mida.so/js/optimize.js?key=Zgj5bOMmdblP3R6LNpQKDr"></script>
+
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://player.vimeo.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://player.vimeo.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://connect.facebook.net https://cdn.mida.so; connect-src 'self' https://connect.facebook.net https://www.facebook.com https://cdn.mida.so https://api-us.mida.so https://hook.eu2.make.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>No Code Balkan - Nauči No-Code i AI Alate | Kursevi za Početnike</title>
+    <meta name="title" content="No Code Balkan - Nauči No-Code i AI Alate | Kursevi za Početnike" />
+    <meta name="description" content="Prva No-Code zajednica na Balkanu! ✓ Preko 20 online kurseva ✓ Bubble, AI alati, WordPress, Figma ✓ Doživotni pristup ✓ 5000+ polaznika ✓ Počni danas bez predznanja!" />
+    <meta name="keywords" content="no code, no-code, bubble, AI alati, ChatGPT, veštačka inteligencija, wordpress, figma, online kursevi, digitalne veštine, freelance, upwork, fiverr, web aplikacije, mobilne aplikacije, bez kodiranja, edukacija, srbija, balkan" />
+    <meta name="author" content="No Code Balkan" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://www.nocodebalkan.com" />
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="RS" />
+    <meta name="geo.placename" content="Serbia" />
+    <meta name="language" content="Serbian" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.nocodebalkan.com/" />
+    <meta property="og:title" content="No Code Balkan - Nauči da praviš sajtove, aplikacije i AI projekte" />
+    <meta property="og:description" content="Nauči da praviš sajtove, aplikacije i AI projekte - bez kodiranja. Prvi korak ka online karijeri. 20+ praktičnih kurseva, podrška zajednice i jasna putanja za početnike. Počni danas." />
+    <meta property="og:image" content="https://www.nocodebalkan.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="No Code Balkan - Online kursevi za No-Code i AI alate" />
+    <meta property="og:locale" content="sr_RS" />
+    <meta property="og:site_name" content="No Code Balkan" />
+    <meta property="fb:app_id" content="1093599662013232" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.nocodebalkan.com/" />
+    <meta name="twitter:title" content="No Code Balkan - Nauči da praviš sajtove, aplikacije i AI projekte" />
+    <meta name="twitter:description" content="Nauči da praviš sajtove, aplikacije i AI projekte - bez kodiranja. Prvi korak ka online karijeri. 20+ praktičnih kurseva, podrška zajednice i jasna putanja za početnike. Počni danas." />
+    <meta name="twitter:image" content="https://www.nocodebalkan.com/og-image.jpg" />
+    <meta name="twitter:image:alt" content="No Code Balkan - Online kursevi" />
+    <meta name="twitter:creator" content="@nocodebalkan" />
+    <meta name="twitter:site" content="@nocodebalkan" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#111827" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>No Code Balkan Landing Page</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}
+    (window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1093599662013232');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "No Code Balkan",
+      "alternateName": "NCB",
+      "url": "https://www.nocodebalkan.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.nocodebalkan.com/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "image": "https://www.nocodebalkan.com/og-image.jpg",
+      "description": "Prva No-Code zajednica na Balkanu sa preko 20 online kurseva za Bubble, AI alate, WordPress, Figma i više. Više od 5000 polaznika.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RS",
+        "addressRegion": "Serbia"
+      },
+      "sameAs": [
+        "https://www.facebook.com/nocodebalkan",
+        "https://www.instagram.com/nocodebalkan",
+        "https://www.youtube.com/@nocodebalkan"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "availableLanguage": ["Serbian", "English"]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "5000"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "category": "Online Course",
+        "priceCurrency": "EUR",
+        "lowPrice": "49",
+        "highPrice": "299",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.nocodebalkan.com"
+      },
+      "educationalCredentialAwarded": "Certificate of Completion",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "No-Code i AI Kursevi",
+        "itemListElement": [
+          {
+            "@type": "Course",
+            "name": "A.I. Kodiranje (Vibe Coding)",
+            "description": "Nauči kako da koristiš AI alate za programiranje",
+            "provider": {
+              "@type": "Organization",
+              "name": "No Code Balkan"
+            }
+          },
+          {
+            "@type": "Course",
+            "name": "Bubble - Web Aplikacije Bez Kodiranja",
+            "description": "Kreiraj web aplikacije sa Bubble platformom",
+            "provider": {
+              "@type": "Organization",
+              "name": "No Code Balkan"
+            }
+          },
+          {
+            "@type": "Course",
+            "name": "Freelance Karijera na Upwork-u",
+            "description": "Kompletna obuka za uspešnu Upwork karijeru",
+            "provider": {
+              "@type": "Organization",
+              "name": "No Code Balkan"
+            }
+          },
+          {
+            "@type": "Course",
+            "name": "WordPress Web Development",
+            "description": "Pravljenje profesionalnih sajtova sa WordPressom",
+            "provider": {
+              "@type": "Organization",
+              "name": "No Code Balkan"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Početna",
+        "item": "https://www.nocodebalkan.com"
+      }]
+    }
+    </script>
   </head>
   <body>
+    <!-- Meta Pixel Noscript -->
+    <noscript>
+      <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1093599662013232&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Noscript -->
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

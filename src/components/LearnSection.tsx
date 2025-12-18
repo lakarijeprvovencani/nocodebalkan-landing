@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Smartphone, Bot, DollarSign } from 'lucide-react';
+import { Code2, Smartphone, Bot, DollarSign, Palette } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 interface FeatureCardProps {
@@ -124,17 +124,22 @@ const LearnSection: React.FC = () => {
     {
       icon: <Code2 size={24} />,
       title: "Pravljenje sajtova i web aplikacija",
-      description: "Nauči kako da koristiš Bubble i Webflow za kreiranje profesionalnih sajtova i web aplikacija bez kodiranja."
+      description: "Nauči kako da kreiraš profesionalne sajtove i web aplikacije bez kodiranja koristeći moderne no-code alate."
     },
     {
       icon: <Smartphone size={24} />,
       title: "Mobilne aplikacije bez koda",
-      description: "Kreiraj native mobilne aplikacije pomoću alata kao što su Adalo, Glide i FlutterFlow."
+      description: "Kreiraj native mobilne aplikacije bez kodiranja koristeći no-code platforme."
     },
     {
       icon: <Bot size={24} />,
       title: "AI alati i automatizacija",
       description: "Koristi OpenAI, Zapier i Make za kreiranje automatizovanih procesa i AI-powered rešenja."
+    },
+    {
+      icon: <Palette size={24} />,
+      title: "Digitalni dizajn",
+      description: "Nauči kako da koristiš Canvu za kreiranje profesionalnih dizajnerskih rešenja i vizuala."
     },
     {
       icon: <DollarSign size={24} />,
@@ -188,7 +193,7 @@ const LearnSection: React.FC = () => {
           Šta možeš da naučiš?
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8">
           {features.map((feature, index) => (
             <FeatureCard 
               key={index}

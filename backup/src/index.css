@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Carousel banner animation - must work on mobile */
+@keyframes scroll-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.banner-scroll {
+  animation: scroll-banner 30s linear infinite;
+  will-change: transform;
+}
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  background-color: #111827;
+}
+
+body {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  background-color: #111827;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  background-color: #111827;
+}
+
+/* Disable scroll-triggered entry animations on all devices while keeping looping animations */
+[data-projection-id][style*="opacity: 0"] {
+  opacity: 1 !important;
+}
+
+[data-projection-id][style*="opacity:0"] {
+  opacity: 1 !important;
+}
+
+/* Disable scroll-triggered animations */
+[data-inviewport] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Completely disable ALL animations and transitions on mobile to prevent flickering/janky scrolling */
+@media (max-width: 768px) {
+  *, *::before, *::after {
+    /* Force disable all animations and transitions */
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    
+    /* Disable transform animations */
+    will-change: auto !important;
+  }
+  
+  /* Exception: Allow carousel banner animation */
+  .banner-scroll {
+    animation: scroll-banner 30s linear infinite !important;
+    will-change: transform !important;
+  }
+  
+  /* Force all Framer Motion elements to be visible immediately */
+  [data-projection-id] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+  
+  /* Override any inline styles that hide elements */
+  [style*="opacity: 0"] {
+    opacity: 1 !important;
+  }
+  
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+  }
+  
+  /* Remove all transforms */
+  [style*="transform"] {
+    transform: none !important;
+  }
+  
+  /* Disable scroll-triggered animations */
+  [data-inviewport] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

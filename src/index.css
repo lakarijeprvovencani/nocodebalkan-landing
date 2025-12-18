@@ -2,25 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Carousel banner animation - must work on mobile */
+@keyframes scroll-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.banner-scroll {
+  animation: scroll-banner 30s linear infinite;
+  will-change: transform;
+}
+
 html {
   scroll-behavior: smooth;
-  overscroll-behavior: none;
-  overflow-x: hidden;
+  overscroll-behavior-x: none;
   background-color: #111827;
 }
 
 body {
-  overscroll-behavior: none;
+  overscroll-behavior-x: none;
   overflow-x: hidden;
+  overflow-y: auto;
   background-color: #111827;
   margin: 0;
   padding: 0;
 }
 
 #root {
-  overscroll-behavior: none;
-  overflow-x: hidden;
+  overscroll-behavior-x: none;
   background-color: #111827;
+  min-height: 100vh;
+}
+
+/* Disable scroll-triggered entry animations on all devices while keeping looping animations */
+[data-projection-id][style*="opacity: 0"] {
+  opacity: 1 !important;
+}
+
+[data-projection-id][style*="opacity:0"] {
+  opacity: 1 !important;
+}
+
+/* Disable scroll-triggered animations */
+[data-inviewport] {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* Completely disable ALL animations and transitions on mobile to prevent flickering/janky scrolling */
@@ -34,6 +64,12 @@ body {
     
     /* Disable transform animations */
     will-change: auto !important;
+  }
+  
+  /* Exception: Allow carousel banner animation */
+  .banner-scroll {
+    animation: scroll-banner 30s linear infinite !important;
+    will-change: transform !important;
   }
   
   /* Force all Framer Motion elements to be visible immediately */

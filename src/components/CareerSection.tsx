@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Bot, Globe2, Video, ArrowRight, MousePointer2, Layers, Blocks, Sparkles } from 'lucide-react';
+import { Code2, Bot, Globe2, Video, ArrowRight, MousePointer2, Layers, Blocks, Sparkles, Palette } from 'lucide-react';
 
 const CareerSection: React.FC = () => {
   const features = [
@@ -17,16 +17,22 @@ const CareerSection: React.FC = () => {
       color: "from-purple-500 to-pink-500"
     },
     {
-      icon: Globe2,
-      title: "Freelance (Frilens)",
-      description: "Fiverr, Upwork i druge platforme omogućuju rad iz svoje kuće za klijente širom sveta.",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
       icon: Video,
       title: "Instagram i TikTok",
       description: "Video sadržaj je trenutno najbolji način da se dođe do klijenata i prvih prodaja bez ulaganja u reklame.",
       color: "from-orange-500 to-red-500"
+    },
+    {
+      icon: Palette,
+      title: "Digitalni Dizajn",
+      description: "Nauči kako da koristiš dizajnerske alate za kreiranje profesionalnih vizuala, grafičkih rešenja i marketing materijala.",
+      color: "from-pink-500 to-rose-500"
+    },
+    {
+      icon: Globe2,
+      title: "Freelance (Frilens)",
+      description: "Online platforme omogućuju rad iz svoje kuće za klijente širom sveta.",
+      color: "from-green-500 to-emerald-500"
     }
   ];
 
@@ -35,7 +41,6 @@ const CareerSection: React.FC = () => {
       {/* Animated background elements */}
       <motion.div 
         className="absolute inset-0"
-        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
       >
@@ -69,26 +74,17 @@ const CareerSection: React.FC = () => {
         <div className="text-center mb-8 md:mb-16">
           <motion.p 
             className="text-lg md:text-2xl text-purple-400 mb-3 md:mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
           >
             Hajde zajedno da
           </motion.p>
           <motion.h2 
             className="text-2xl md:text-6xl font-bold text-white mb-4 md:mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
             Menjamo tvoju karijeru
           </motion.h2>
           <motion.p 
             className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
             Napravili smo prvu zajednicu na našim prostorima koja edukuje ljude o novim tehnologijama i mogućnostima
@@ -98,9 +94,6 @@ const CareerSection: React.FC = () => {
         {/* No-Code Builder Animation */}
         <motion.div 
           className="mb-20 relative"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl filter blur-xl" />
           <div className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 md:p-8 overflow-hidden">
@@ -140,14 +133,11 @@ const CareerSection: React.FC = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-8 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8 mb-8 md:mb-16">
           {features.map((feature, index) => (
             <motion.div
               key={index}
               className="group relative h-full"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
               {/* Subtle pulsing border */}
@@ -245,14 +235,12 @@ const CareerSection: React.FC = () => {
 
         <motion.div 
           className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
           <motion.a
-            href="https://nocodebalkan.thinkific.com/order?ct=b23d954d-15c7-402b-ad0f-9fff6b075e6d" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg text-base md:text-lg shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group"
+            href="https://nocodebalkan.thinkific.com/enroll/3569704" target="_blank" rel="noopener noreferrer"
+            style={{ background: '#FF0054' }}
+            className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 text-white font-medium rounded-lg text-base md:text-lg shadow-lg transition-all duration-300 group hover:opacity-90"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
