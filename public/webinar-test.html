@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Webinar - No Code Balkan</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5DN9H8SQP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L5DN9H8SQP');
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #111111;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Banner Styles */
+    .banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+      transform: translateY(100%);
+      animation: slideUp 0.5s ease-out forwards;
+      z-index: 1000;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .banner-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: #888;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .banner-close:hover {
+      color: #fff;
+    }
+
+    .banner-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .coupon-line {
+      font-size: 18px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .coupon-code {
+      background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+      color: #fff;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 20px;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 10px rgba(243, 156, 18, 0.3);
+    }
+
+    .discount-text {
+      font-size: 16px;
+      color: #ccc;
+      margin-bottom: 16px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+      color: #000;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+    }
+
+    /* Rotate Phone Hint - Only on mobile portrait */
+    .rotate-hint {
+      position: fixed;
+      top: 32%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 12px 20px;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      z-index: 100;
+      animation: fadeInDown 0.5s ease-out;
+      max-width: 90%;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -120%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -100%);
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+    .rotate-hint.hiding {
+      animation: fadeOut 0.3s ease-out forwards;
+    }
+
+    .rotate-icon {
+      width: 32px;
+      height: 32px;
+      animation: rotatePhone 2s ease-in-out infinite;
+    }
+
+    @keyframes rotatePhone {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(90deg);
+      }
+    }
+
+    .rotate-text {
+      font-size: 14px;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .rotate-hint-close {
+      background: none;
+      border: none;
+      color: #888;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 0;
+      margin-left: 8px;
+      line-height: 1;
+    }
+
+    .rotate-hint-close:hover {
+      color: #fff;
+    }
+
+    /* Show only on mobile portrait */
+    @media (max-width: 768px) and (orientation: portrait) {
+      .rotate-hint {
+        display: flex;
+      }
+    }
+
+    /* Hide in landscape */
+    @media (orientation: landscape) {
+      .rotate-hint {
+        display: none !important;
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .banner {
+        padding: 15px 10px 20px;
+      }
+
+      .coupon-line {
+        font-size: 16px;
+      }
+
+      .coupon-code {
+        font-size: 18px;
+        padding: 5px 12px;
+      }
+
+      .discount-text {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .cta-button {
+        font-size: 14px;
+        padding: 12px 30px;
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .banner-close {
+        top: 8px;
+        right: 10px;
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Rotate Phone Hint for Mobile -->
+  <div class="rotate-hint" id="rotateHint">
+    <svg class="rotate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+      <line x1="12" y1="18" x2="12" y2="18"/>
+    </svg>
+    <span class="rotate-text">Za najbolji prikaz<br>okreni telefon na stranu</span>
+    <button class="rotate-hint-close" aria-label="Zatvori">&times;</button>
+  </div>
+
+  <div class="video-container">
+    <div class="video-wrapper">
+      <iframe 
+        allow="fullscreen" 
+        allowfullscreen 
+        src="https://streamable.com/e/lxvzov?loop=0&nocontrols=1">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    // Rotate hint - hide after 2 minutes or when closed
+    const ROTATE_HINT_DURATION_MS = 2 * 60 * 1000; // 2 minutes
+    const rotateHint = document.getElementById('rotateHint');
+
+    function hideRotateHint() {
+      if (rotateHint && rotateHint.style.display !== 'none') {
+        rotateHint.classList.add('hiding');
+        setTimeout(() => {
+          rotateHint.style.display = 'none';
+        }, 300);
+      }
+    }
+
+    // Close button
+    rotateHint.querySelector('.rotate-hint-close').addEventListener('click', hideRotateHint);
+
+    // Auto-hide after 2 minutes
+    setTimeout(hideRotateHint, ROTATE_HINT_DURATION_MS);
+
+    // Hide when orientation changes to landscape
+    window.addEventListener('orientationchange', function() {
+      if (window.orientation === 90 || window.orientation === -90) {
+        hideRotateHint();
+      }
+    });
+
+    // Also check screen orientation API
+    if (screen.orientation) {
+      screen.orientation.addEventListener('change', function() {
+        if (screen.orientation.type.includes('landscape')) {
+          hideRotateHint();
+        }
+      });
+    }
+
+    // TEST VERSION - Banner appears after 5 seconds
+    const BANNER_DELAY_MS = 5 * 1000;
+
+    function createBanner() {
+      const banner = document.createElement('div');
+      banner.className = 'banner';
+      banner.innerHTML = `
+        <button class="banner-close" aria-label="Zatvori">&times;</button>
+        <div class="banner-content">
+          <div class="coupon-line">
+            Kupon: <span class="coupon-code">AKCIJA50</span>
+          </div>
+          <div class="discount-text">Iskoristi popust od 50% za prvi mesec</div>
+          <a href="https://www.nocodebalkan.com" class="cta-button" target="_blank" rel="noopener">Prijavi se</a>
+        </div>
+      `;
+
+      document.body.appendChild(banner);
+
+      // Close button handler
+      banner.querySelector('.banner-close').addEventListener('click', function() {
+        banner.remove();
+      });
+
+      // CTA click handler - also removes banner
+      banner.querySelector('.cta-button').addEventListener('click', function() {
+        banner.remove();
+      });
+    }
+
+    // Set timeout to show banner after 3762 seconds
+    setTimeout(createBanner, BANNER_DELAY_MS);
+  </script>
+</body>
+</html>
