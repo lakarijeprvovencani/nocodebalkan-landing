@@ -9,6 +9,7 @@ import HomePageVariantB from './pages/HomePageVariantB';
 import CTAPage from './pages/CTAPage';
 import WebinarSuccessPage from './pages/WebinarSuccessPage';
 import NovogodisnjaAkcijaPage from './pages/NovogodisnjaAkcijaPage';
+import DanZaljubljenihPage from './pages/DanZaljubljenihPage';
 import LifetimePage from './pages/LifetimePage';
 import RoditeljiPage from './pages/RoditeljiPage';
 import KonsultacijePage from './pages/KonsultacijePage';
@@ -107,6 +108,11 @@ function App() {
           <Route path="/novogodisnjaakcija" element={
             <>
               <NovogodisnjaAkcijaPage />
+            </>
+          } />
+          <Route path="/danzaljubljenih" element={
+            <>
+              <DanZaljubljenihPage />
             </>
           } />
         </Routes>
