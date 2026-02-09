@@ -15,3 +15,6 @@ npm run dev
 
 ## Deploy
 Push na `main` branch automatski deployuje na Netlify.
+
+## Aktuelne akcije
+- `/danzaljubljenih` - Dan zaljubljenih akcija (expires Feb 14, 2026)
