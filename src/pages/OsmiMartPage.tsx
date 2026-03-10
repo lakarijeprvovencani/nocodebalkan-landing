@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, CheckCircle, Star, Sparkles, ArrowRight, Shield, Users, Code2, Briefcase } from 'lucide-react';
+import { Sparkles, CheckCircle, Star, ArrowRight, Shield, Users, Code2, Briefcase, Crown } from 'lucide-react';
 import testimonial1 from '../assets/images/testimonials-nova/Screenshot 2025-12-18 at 10.23.43.png';
 import testimonial2 from '../assets/images/testimonials-nova/Screenshot 2025-12-18 at 10.23.56.png';
 import testimonial3 from '../assets/images/testimonials-nova/Screenshot 2025-12-18 at 10.24.06.png';
@@ -8,8 +8,8 @@ import testimonial4 from '../assets/images/testimonials-nova/Screenshot 2025-12-
 import testimonial5 from '../assets/images/testimonials-nova/Screenshot 2025-12-18 at 10.24.34.png';
 import testimonial6 from '../assets/images/testimonials-nova/Screenshot 2025-12-18 at 10.24.43.png';
 
-// Floating Heart component
-const FloatingHeart: React.FC<{ className?: string; delay?: number }> = ({ className = '', delay = 0 }) => (
+// Floating Sparkle component for Women's Day
+const FloatingSparkle: React.FC<{ className?: string; delay?: number }> = ({ className = '', delay = 0 }) => (
   <motion.div
     className={`absolute ${className}`}
     initial={{ scale: 0, rotate: -10 }}
@@ -19,11 +19,11 @@ const FloatingHeart: React.FC<{ className?: string; delay?: number }> = ({ class
       rotate: { delay: delay + 0.5, duration: 2, repeat: Infinity }
     }}
   >
-    <Heart className="w-16 h-16 md:w-20 md:h-20 text-pink-500 fill-pink-500" />
+    <Sparkles className="w-16 h-16 md:w-20 md:h-20 text-purple-400 fill-purple-400" />
   </motion.div>
 );
 
-const DanZaljubljenihPage: React.FC = () => {
+const OsmiMartPage: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -32,10 +32,10 @@ const DanZaljubljenihPage: React.FC = () => {
   });
 
   useEffect(() => {
-    document.title = "Dan Zaljubljenih Akcija | No Code Balkan";
+    document.title = "8. Mart Akcija | No Code Balkan";
     
-    // Target: February 14, 2026 at 23:59:59
-    const targetDate = new Date(2026, 1, 14, 23, 59, 59); // Month is 0-indexed, so 1 = February
+    // Target: March 8, 2026 at 23:59:59
+    const targetDate = new Date(2026, 2, 8, 23, 59, 59); // Month is 0-indexed, so 2 = March
     
     const calculateTimeLeft = () => {
       const now = new Date();
@@ -86,30 +86,30 @@ const DanZaljubljenihPage: React.FC = () => {
   const totalValue = courses.reduce((sum, course) => sum + course.price, 0);
 
   const handleCTAClick = () => {
-    window.open('https://nocodebalkan.thinkific.com/enroll/3675263', '_blank');
+    window.open('https://nocodebalkan.thinkific.com/enroll/3698365?price_id=4646366', '_blank');
   };
 
   return (
     <div className="min-h-screen bg-gray-900 relative overflow-hidden">
-      {/* Floating Hearts Decorations - Desktop only */}
-      <FloatingHeart className="top-20 left-20 opacity-60 hidden md:block" delay={0.2} />
-      <FloatingHeart className="top-40 right-16 opacity-50 hidden md:block" delay={0.4} />
-      <FloatingHeart className="bottom-40 left-32 opacity-40 hidden md:block" delay={0.6} />
-      <FloatingHeart className="bottom-60 right-24 opacity-50 hidden md:block" delay={0.8} />
+      {/* Floating Sparkles Decorations - Desktop only */}
+      <FloatingSparkle className="top-20 left-20 opacity-60 hidden md:block" delay={0.2} />
+      <FloatingSparkle className="top-40 right-16 opacity-50 hidden md:block" delay={0.4} />
+      <FloatingSparkle className="bottom-40 left-32 opacity-40 hidden md:block" delay={0.6} />
+      <FloatingSparkle className="bottom-60 right-24 opacity-50 hidden md:block" delay={0.8} />
 
-      {/* Background Effects - Pink/Red Valentine theme */}
+      {/* Background Effects - Purple/Violet Women's Day theme */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-500/20 rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/10 rounded-full blur-[150px]" />
-        <div className="absolute top-20 right-1/3 w-64 h-64 bg-pink-400/10 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-fuchsia-500/10 rounded-full blur-[150px]" />
+        <div className="absolute top-20 right-1/3 w-64 h-64 bg-purple-400/10 rounded-full blur-[100px]" />
       </div>
 
-      {/* Floating Particles - Valentine colors */}
+      {/* Floating Particles - Women's Day colors */}
       {[...Array(20)].map((_, i) => (
         <motion.div
           key={i}
-          className={`absolute w-2 h-2 rounded-full ${i % 3 === 0 ? 'bg-pink-500/40' : i % 3 === 1 ? 'bg-red-500/40' : 'bg-rose-400/40'}`}
+          className={`absolute w-2 h-2 rounded-full ${i % 3 === 0 ? 'bg-purple-500/40' : i % 3 === 1 ? 'bg-violet-500/40' : 'bg-fuchsia-400/40'}`}
           style={{
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
@@ -134,10 +134,10 @@ const DanZaljubljenihPage: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="text-center mb-6"
         >
-          <span className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500/20 to-red-500/20 border border-pink-500/50 rounded-full text-white text-sm md:text-base font-semibold">
-            <Heart className="w-5 h-5 text-pink-500 fill-pink-500" />
-            💕 DAN ZALJUBLJENIH AKCIJA 💕
-            <Heart className="w-5 h-5 text-pink-500 fill-pink-500" />
+          <span className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500/20 to-violet-500/20 border border-purple-500/50 rounded-full text-white text-sm md:text-base font-semibold">
+            <Crown className="w-5 h-5 text-purple-400" />
+            ✨ MEĐUNARODNI DAN ŽENA - 8. MART ✨
+            <Crown className="w-5 h-5 text-purple-400" />
           </span>
         </motion.div>
 
@@ -149,14 +149,14 @@ const DanZaljubljenihPage: React.FC = () => {
           className="text-center mb-6"
         >
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            💝 PAKET OD <span className="text-pink-500">13 KURSEVA</span> 💝
+            👑 PAKET OD <span className="text-purple-400">13 KURSEVA</span> 👑
           </h1>
           <motion.div 
-            className="inline-block bg-gradient-to-r from-pink-500 via-red-500 to-pink-500 text-white text-2xl md:text-4xl font-bold px-8 py-4 rounded-2xl transform -rotate-2 shadow-2xl shadow-pink-500/30"
+            className="inline-block bg-gradient-to-r from-purple-500 via-violet-500 to-purple-500 text-white text-2xl md:text-4xl font-bold px-8 py-4 rounded-2xl transform -rotate-2 shadow-2xl shadow-purple-500/30"
             animate={{ rotate: [-2, 2, -2] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
-            6 MESECI ZA $147
+            8 MESECI ZA $196
           </motion.div>
         </motion.div>
 
@@ -167,7 +167,7 @@ const DanZaljubljenihPage: React.FC = () => {
           transition={{ delay: 0.35 }}
           className="text-center text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8"
         >
-          💖 <span className="text-pink-400 font-semibold">Pokloni sebi ili dragoj osobi</span> znanje koje otvara vrata <span className="text-pink-500 font-semibold">novim prilikama</span> 💖
+          💜 <span className="text-purple-400 font-semibold">Investiraj u sebe</span> i ostvari <span className="text-purple-400 font-semibold">finansijsku nezavisnost</span> uz novu digitalnu karijeru 💜
         </motion.p>
 
         {/* Countdown Timer */}
@@ -177,12 +177,11 @@ const DanZaljubljenihPage: React.FC = () => {
           transition={{ delay: 0.4 }}
           className="max-w-3xl mx-auto mb-12"
         >
-          <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 backdrop-blur-sm border border-pink-500/30 rounded-2xl p-6 md:p-8 relative overflow-hidden">
-            {/* Valentine border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 via-red-500 to-pink-500" />
+          <div className="bg-gradient-to-br from-gray-800/70 to-gray-900/70 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-6 md:p-8 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-violet-500 to-purple-500" />
             
             <div className="flex items-center justify-center gap-2 mb-4">
-              <span className="text-gray-300 font-medium">⏰ Ponuda važi do 14. februara u ponoć!</span>
+              <span className="text-gray-300 font-medium">⏰ Ponuda važi do 8. marta u ponoć!</span>
             </div>
             <div className="grid grid-cols-4 gap-3 md:gap-6">
               {[
@@ -198,7 +197,7 @@ const DanZaljubljenihPage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.1 }}
                 >
-                  <div className="bg-gradient-to-br from-pink-500 to-red-600 rounded-xl p-3 md:p-4 mb-2 shadow-lg shadow-pink-500/20 border border-pink-400/20">
+                  <div className="bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl p-3 md:p-4 mb-2 shadow-lg shadow-purple-500/20 border border-purple-400/20">
                     <motion.span 
                       key={item.value}
                       initial={{ scale: 1.2 }}
@@ -226,10 +225,10 @@ const DanZaljubljenihPage: React.FC = () => {
             onClick={handleCTAClick}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-600 via-pink-500 to-pink-600 hover:from-pink-600/90 hover:via-pink-500/90 hover:to-pink-600/90 text-white text-lg md:text-xl font-bold rounded-xl shadow-lg shadow-pink-500/30 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-600/90 hover:via-purple-500/90 hover:to-purple-600/90 text-white text-lg md:text-xl font-bold rounded-xl shadow-lg shadow-purple-500/30 transition-all duration-300"
           >
-            <Heart className="w-5 h-5 fill-white" />
-            Zgrabi ponudu!
+            <Crown className="w-5 h-5" />
+            Iskoristi ponudu!
             <ArrowRight className="w-5 h-5" />
           </motion.button>
         </motion.div>
@@ -249,14 +248,14 @@ const DanZaljubljenihPage: React.FC = () => {
               className="text-center"
             >
               <div className="inline-flex items-center gap-3 mb-4">
-                <Code2 className="w-8 h-8 text-pink-500" />
-                <Briefcase className="w-8 h-8 text-red-400" />
+                <Code2 className="w-8 h-8 text-purple-400" />
+                <Briefcase className="w-8 h-8 text-violet-400" />
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
-                IT Kursevi koji te spremaju za <span className="text-pink-500">freelance karijeru</span>
+                IT Kursevi koji te spremaju za <span className="text-purple-400">finansijsku nezavisnost</span>
               </h2>
               <p className="text-lg md:text-xl text-gray-300 mb-4 leading-relaxed">
-                <span className="text-pink-500 font-semibold">No-code</span> je način da kreiraš web sajtove, mobilne aplikacije i automatizacije <span className="text-white font-semibold">bez kodiranja</span>.
+                <span className="text-purple-400 font-semibold">No-code</span> je način da kreiraš web sajtove, mobilne aplikacije i automatizacije <span className="text-white font-semibold">bez kodiranja</span>.
               </p>
               <p className="text-base md:text-lg text-gray-400 leading-relaxed">
                 Naši kursevi te uče da koristiš moderne IT alate i <span className="text-white font-semibold">digitalni dizajn</span> koji omogućavaju da praviš profesionalne aplikacije, web sajtove i vizuelne materijale, započneš freelance karijeru i zaradiš online - <span className="text-white font-semibold">bez potrebe za programiranjem</span>.
@@ -273,15 +272,15 @@ const DanZaljubljenihPage: React.FC = () => {
           className="max-w-4xl mx-auto mb-12"
         >
           <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 md:p-8 relative overflow-hidden">
-            {/* Decorative corner hearts - Desktop only */}
-            <div className="absolute top-4 left-4 text-2xl opacity-50 hidden md:block">💕</div>
-            <div className="absolute top-4 right-4 text-2xl opacity-50 hidden md:block">💕</div>
+            {/* Decorative corner elements - Desktop only */}
+            <div className="absolute top-4 left-4 text-2xl opacity-50 hidden md:block">✨</div>
+            <div className="absolute top-4 right-4 text-2xl opacity-50 hidden md:block">✨</div>
             
             <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-2">
               Evo šta dobijaš ako se priključiš našoj
             </h2>
             <h3 className="text-xl md:text-2xl font-bold text-center mb-8">
-              <span className="text-pink-500">"No Code Balkan"</span> zajednici:
+              <span className="text-purple-400">"No Code Balkan"</span> zajednici:
             </h3>
 
             {/* Courses */}
@@ -296,7 +295,7 @@ const DanZaljubljenihPage: React.FC = () => {
                 >
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <div className="flex-1">
-                    <span className="text-white font-medium group-hover:text-pink-500 transition-colors">Kurs {course.name}</span>
+                    <span className="text-white font-medium group-hover:text-purple-400 transition-colors">Kurs {course.name}</span>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
                     <span className="text-red-400/80 line-through text-base font-semibold">${course.price}</span>
@@ -307,7 +306,7 @@ const DanZaljubljenihPage: React.FC = () => {
 
             {/* Mini Courses Section */}
             <div className="border-t border-gray-700/50 pt-6 mb-6">
-              <h4 className="text-lg font-semibold text-pink-400 mb-4 flex items-center gap-2">
+              <h4 className="text-lg font-semibold text-purple-400 mb-4 flex items-center gap-2">
                 <Sparkles className="w-5 h-5" />
                 🎯 MINI KURSEVI (uključeni u ponudu):
               </h4>
@@ -326,9 +325,9 @@ const DanZaljubljenihPage: React.FC = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.9 + index * 0.03 }}
-                    className="flex items-center gap-3 p-3 bg-pink-500/10 border border-pink-500/20 rounded-xl"
+                    className="flex items-center gap-3 p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl"
                   >
-                    <CheckCircle className="w-4 h-4 text-pink-400 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0" />
                     <span className="text-white font-medium text-sm md:text-base">{miniCourse.name}</span>
                   </motion.div>
                 ))}
@@ -338,14 +337,14 @@ const DanZaljubljenihPage: React.FC = () => {
             {/* Total Value Summary */}
             <div className="border-t border-gray-700/50 pt-4 mb-6">
               <motion.div 
-                className="flex items-center justify-between p-5 md:p-6 bg-gradient-to-r from-pink-500/20 via-red-600/20 to-pink-500/20 rounded-xl border-2 border-pink-500/50 shadow-lg shadow-pink-500/20"
+                className="flex items-center justify-between p-5 md:p-6 bg-gradient-to-r from-purple-500/20 via-violet-600/20 to-purple-500/20 rounded-xl border-2 border-purple-500/50 shadow-lg shadow-purple-500/20"
                 initial={{ scale: 0.95 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 1.0 }}
               >
                 <span className="text-white font-bold text-xl md:text-2xl">Ukupna vrednost:</span>
                 <motion.span 
-                  className="text-pink-500 font-bold text-3xl md:text-4xl drop-shadow-lg"
+                  className="text-purple-400 font-bold text-3xl md:text-4xl drop-shadow-lg"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
@@ -356,7 +355,7 @@ const DanZaljubljenihPage: React.FC = () => {
 
             {/* Bonuses */}
             <div className="border-t border-gray-700/50 pt-6 space-y-3">
-              <h4 className="text-lg font-semibold text-red-400 mb-4 flex items-center gap-2">
+              <h4 className="text-lg font-semibold text-violet-400 mb-4 flex items-center gap-2">
                 <Sparkles className="w-5 h-5" />
                 💝 BONUS SADRŽAJ:
               </h4>
@@ -366,13 +365,13 @@ const DanZaljubljenihPage: React.FC = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1.2 + index * 0.05 }}
-                  className="flex items-start gap-3 p-3 bg-red-500/10 border border-red-500/20 rounded-xl"
+                  className="flex items-start gap-3 p-3 bg-violet-500/10 border border-violet-500/20 rounded-xl"
                 >
-                  <Star className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <Star className="w-5 h-5 text-violet-400 flex-shrink-0 mt-0.5" />
                   <div className="flex-1">
                     <span className="text-white font-medium">{bonus.name}</span>
                   </div>
-                  <span className="text-red-400 font-bold flex-shrink-0">{bonus.value}</span>
+                  <span className="text-violet-400 font-bold flex-shrink-0">{bonus.value}</span>
                 </motion.div>
               ))}
             </div>
@@ -386,36 +385,35 @@ const DanZaljubljenihPage: React.FC = () => {
           transition={{ delay: 1.3 }}
           className="max-w-3xl mx-auto mb-12"
         >
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border-2 border-pink-500/50 rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
-            {/* Valentine decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 via-red-500 to-pink-500" />
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-red-500/20 rounded-full blur-3xl" />
+          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border-2 border-purple-500/50 rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-violet-500 to-purple-500" />
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl" />
+            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-violet-500/20 rounded-full blur-3xl" />
             
             {/* Corner decorations */}
-            <div className="absolute top-4 left-4 text-3xl hidden md:block">💕</div>
-            <div className="absolute top-4 right-4 text-3xl hidden md:block">💖</div>
-            <div className="absolute bottom-4 left-4 text-3xl hidden md:block">💗</div>
-            <div className="absolute bottom-4 right-4 text-3xl hidden md:block">💝</div>
+            <div className="absolute top-4 left-4 text-3xl hidden md:block">✨</div>
+            <div className="absolute top-4 right-4 text-3xl hidden md:block">👑</div>
+            <div className="absolute bottom-4 left-4 text-3xl hidden md:block">💜</div>
+            <div className="absolute bottom-4 right-4 text-3xl hidden md:block">✨</div>
 
             <div className="relative z-10">
               <p className="text-gray-300 text-lg mb-2">
                 Umesto mesečne pretplate od <span className="line-through text-red-400 text-xl font-semibold">$49/mesec</span>
               </p>
               <p className="text-gray-400 text-base mb-4">
-                (što bi bilo $294 za 6 meseci)
+                (što bi bilo $392 za 8 meseci)
               </p>
               
               <div className="inline-block my-4">
                 <motion.div
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="bg-gradient-to-r from-pink-500 via-red-500 to-pink-500 rounded-2xl px-8 py-6 shadow-2xl shadow-pink-500/40 border-2 border-pink-400/30"
+                  className="bg-gradient-to-r from-purple-500 via-violet-500 to-purple-500 rounded-2xl px-8 py-6 shadow-2xl shadow-purple-500/40 border-2 border-purple-400/30"
                 >
-                  <div className="text-pink-100 text-sm font-semibold mb-1">SAMO</div>
-                  <span className="text-5xl md:text-7xl font-bold text-white">$147</span>
-                  <div className="text-white text-xl mt-2">za 6 meseci pristupa</div>
-                  <div className="text-pink-100 text-base mt-2 font-semibold">3 + 3 MESECA GRATIS 🎁</div>
+                  <div className="text-purple-100 text-sm font-semibold mb-1">SAMO</div>
+                  <span className="text-5xl md:text-7xl font-bold text-white">$196</span>
+                  <div className="text-white text-xl mt-2">za 8 meseci pristupa</div>
+                  <div className="text-purple-100 text-base mt-2 font-semibold">4 + 4 MESECA GRATIS 🎁</div>
                 </motion.div>
               </div>
 
@@ -430,17 +428,17 @@ const DanZaljubljenihPage: React.FC = () => {
                   onClick={handleCTAClick}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-600 via-pink-500 to-pink-600 hover:from-pink-600/90 hover:via-pink-500/90 hover:to-pink-600/90 text-white text-lg md:text-xl font-bold rounded-xl shadow-lg shadow-pink-500/30 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-600/90 hover:via-purple-500/90 hover:to-purple-600/90 text-white text-lg md:text-xl font-bold rounded-xl shadow-lg shadow-purple-500/30 transition-all duration-300"
                 >
-                  <Heart className="w-5 h-5 fill-white" />
-                  Zgrabi ponudu!
+                  <Crown className="w-5 h-5" />
+                  Iskoristi ponudu!
                   <ArrowRight className="w-5 h-5" />
                 </motion.button>
               </motion.div>
 
-              <div className="flex items-center justify-center gap-2 mt-4 text-pink-400 font-semibold">
-                <Shield className="w-5 h-5 text-pink-400" />
-                <span>Ušteda od $147 (50% popusta!)</span>
+              <div className="flex items-center justify-center gap-2 mt-4 text-purple-400 font-semibold">
+                <Shield className="w-5 h-5 text-purple-400" />
+                <span>Ušteda od $196 (50% popusta!)</span>
               </div>
             </div>
           </div>
@@ -454,7 +452,7 @@ const DanZaljubljenihPage: React.FC = () => {
           className="max-w-6xl mx-auto mb-12"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
-            💖 Šta kažu naši članovi 💖
+            💜 Šta kažu naši članovi 💜
           </h2>
           
           {/* Desktop: Masonry-like 3 column layout */}
@@ -475,7 +473,7 @@ const DanZaljubljenihPage: React.FC = () => {
                   transition={{ delay: 1.26 + index * 0.08 }}
                   className="break-inside-avoid mb-4"
                 >
-                  <div className="relative rounded-xl overflow-hidden border border-gray-700/50 bg-gray-800/30 backdrop-blur-sm hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-pink-500/10">
+                  <div className="relative rounded-xl overflow-hidden border border-gray-700/50 bg-gray-800/30 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/10">
                     <img
                       src={img}
                       alt={`Testimonial ${index + 1}`}
@@ -530,10 +528,10 @@ const DanZaljubljenihPage: React.FC = () => {
             onClick={handleCTAClick}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-600 via-pink-500 to-pink-600 hover:from-pink-600/90 hover:via-pink-500/90 hover:to-pink-600/90 text-white text-lg md:text-xl font-bold rounded-xl shadow-lg shadow-pink-500/30 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-600/90 hover:via-purple-500/90 hover:to-purple-600/90 text-white text-lg md:text-xl font-bold rounded-xl shadow-lg shadow-purple-500/30 transition-all duration-300"
           >
-            <Heart className="w-5 h-5 fill-white" />
-            Iskoristi ponudu!
+            <Crown className="w-5 h-5" />
+            Zgrabi ponudu!
             <ArrowRight className="w-5 h-5" />
           </motion.button>
           
@@ -551,12 +549,12 @@ const DanZaljubljenihPage: React.FC = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
             <div className="flex flex-col items-center gap-2 p-4 bg-gray-800/30 rounded-xl border border-gray-700/30">
-              <Users className="w-8 h-8 text-pink-500" />
+              <Users className="w-8 h-8 text-purple-400" />
               <span className="text-white font-semibold">1000+ Članova</span>
               <span className="text-gray-400 text-sm">Aktivna zajednica</span>
             </div>
             <div className="flex flex-col items-center gap-2 p-4 bg-gray-800/30 rounded-xl border border-gray-700/30">
-              <Star className="w-8 h-8 text-pink-500" />
+              <Star className="w-8 h-8 text-purple-400" />
               <span className="text-white font-semibold">4.9/5 Ocena</span>
               <span className="text-gray-400 text-sm">Od naših članova</span>
             </div>
@@ -575,14 +573,14 @@ const DanZaljubljenihPage: React.FC = () => {
           transition={{ delay: 1.5 }}
           className="text-center mt-12 pb-8"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-pink-500/20 border border-pink-500/50 rounded-full mb-4">
-            <span className="text-pink-400 font-semibold animate-pulse">⚠️ OGRANIČENA PONUDA</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-purple-500/20 border border-purple-500/50 rounded-full mb-4">
+            <span className="text-purple-400 font-semibold animate-pulse">⚠️ OGRANIČENA PONUDA</span>
           </div>
           <p className="text-gray-400 text-sm">
-            <span className="hidden md:inline">💕</span> Ova Dan Zaljubljenih ponuda važi samo do 14. februara 2026. u ponoć! <span className="hidden md:inline">💕</span>
+            <span className="hidden md:inline">✨</span> Ova 8. Mart ponuda važi samo do 8. marta 2026. u ponoć! <span className="hidden md:inline">✨</span>
           </p>
-          <p className="text-pink-500 font-semibold mt-2 text-lg">
-            💖 Uloži u sebe ili pokloni znanje nekome koga voliš! 💖
+          <p className="text-purple-400 font-semibold mt-2 text-lg">
+            👑 Investiraj u sebe i postani gospodar svoje budućnosti! 💜
           </p>
         </motion.div>
       </div>
@@ -590,4 +588,4 @@ const DanZaljubljenihPage: React.FC = () => {
   );
 };
 
-export default DanZaljubljenihPage;
+export default OsmiMartPage;

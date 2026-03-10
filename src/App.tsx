@@ -10,6 +10,9 @@ import CTAPage from './pages/CTAPage';
 import WebinarSuccessPage from './pages/WebinarSuccessPage';
 import NovogodisnjaAkcijaPage from './pages/NovogodisnjaAkcijaPage';
 import DanZaljubljenihPage from './pages/DanZaljubljenihPage';
+import OsmiMartPage from './pages/OsmiMartPage';
+import WebinarPromenaPage from './pages/WebinarPromenaPage';
+import WebinarKarijeraPage from './pages/WebinarKarijeraPage';
 import LifetimePage from './pages/LifetimePage';
 import RoditeljiPage from './pages/RoditeljiPage';
 import KonsultacijePage from './pages/KonsultacijePage';
@@ -113,6 +116,21 @@ function App() {
           <Route path="/danzaljubljenih" element={
             <>
               <DanZaljubljenihPage />
+            </>
+          } />
+          <Route path="/8mart" element={
+            <>
+              <OsmiMartPage />
+            </>
+          } />
+          <Route path="/webinar-promena" element={
+            <>
+              <WebinarPromenaPage />
+            </>
+          } />
+          <Route path="/webinar-karijera" element={
+            <>
+              <WebinarKarijeraPage />
             </>
           } />
         </Routes>
