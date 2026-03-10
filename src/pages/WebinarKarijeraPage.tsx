@@ -20,7 +20,7 @@ const WebinarKarijeraPage: React.FC = () => {
   const [showEmbedFallback, setShowEmbedFallback] = useState(false);
 
   useEffect(() => {
-    document.title = "Besplatan Webinar - Znaš da ovaj posao nije za tebe | No Code Balkan";
+    document.title = "Besplatan Webinar - Znaš da trenutni posao nije za tebe | No Code Balkan";
 
     const updateTimer = () => setTimeLeft(getTimeUntilNext15Min());
     updateTimer();
@@ -123,7 +123,7 @@ const WebinarKarijeraPage: React.FC = () => {
           className="text-center mb-16 md:mb-20"
         >
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Znaš da ovaj posao nije za tebe.{' '}
+            Znaš da trenutni posao nije za tebe.{' '}
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Znaš već godinama.
             </span>
