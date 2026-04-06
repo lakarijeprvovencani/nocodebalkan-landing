@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { usePricingHashScroll } from '../hooks/usePricingHashScroll';
 import Hero from '../components/Hero';
 import IntroSection from '../components/IntroSection';
 import FlowDiagram from '../components/FlowDiagram';
@@ -19,6 +20,7 @@ import TestimonialImagesSlider from '../components/TestimonialImagesSlider';
 import FinalCTASection from '../components/FinalCTASection';
 
 const PoziviPage: React.FC = () => {
+  usePricingHashScroll();
   useEffect(() => {
     document.title = "No Code Balkan - Nauči da praviš aplikacije bez kodiranja";
   }, []);

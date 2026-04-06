@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Users, Target, Rocket, ArrowRight, Sparkles, Brain, Lightbulb } from 'lucide-react';
+import { handlePricingAnchorClick, PRICING_HREF } from '../utils/pricingNav';
 
 const WhySection: React.FC = () => {
   const reasons = [
@@ -88,7 +89,8 @@ const WhySection: React.FC = () => {
               </p>
 
               <motion.a
-                href="https://nocodebalkan.thinkific.com/enroll/3569704" target="_blank" rel="noopener noreferrer"
+                href={PRICING_HREF}
+                onClick={handlePricingAnchorClick}
                 style={{ background: '#FF0054' }}
                 className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 text-white font-medium rounded-xl shadow-lg transition-all duration-300 group text-sm md:text-base hover:opacity-90"
                 whileHover={{ scale: 1.05 }}

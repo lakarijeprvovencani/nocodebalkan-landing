@@ -81,6 +81,7 @@ const NovogodisnjaAkcijaPage: React.FC = () => {
     { name: "Pravljenje Web Sajtova bez koda", price: 149 },
     { name: "AI Kodiranje - Vibe Coding", price: 149 },
     { name: "Uvod u Web Aplikacije (softvere) bez kodiranja", price: 149 },
+    { name: "Zakazivanje termina u Bubble-u – Od nule do aplikacije", price: 149 },
     { name: "A.I. ChatBot sa vašom bazom znanja", price: 100 },
     { name: "Uvod u veštačku inteligenciju", price: 149 },
     { name: "Postani Frilenser i Započni karijeru na Fiverr-u", price: 149 },
@@ -229,7 +230,7 @@ const NovogodisnjaAkcijaPage: React.FC = () => {
           className="text-center mb-6"
         >
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            🎁 PAKET OD <span className="text-[#FF0054]">13 KURSEVA</span> 🎁
+            🎁 PAKET OD <span className="text-[#FF0054]">14 KURSEVA</span> 🎁
           </h1>
           <motion.div 
             className="inline-block bg-gradient-to-r from-[#FF0054] via-red-500 to-[#FF0054] text-white text-2xl md:text-4xl font-bold px-8 py-4 rounded-2xl transform -rotate-2 shadow-2xl shadow-[#FF0054]/30"

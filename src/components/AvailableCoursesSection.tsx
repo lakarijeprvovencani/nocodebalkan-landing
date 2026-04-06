@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Bot, Globe2, Video, Users, Clock, BookOpen, Laptop, Brush, MessageSquare, Languages, ShoppingBag, CalendarCheck } from 'lucide-react';
 import { trackEvent } from '../utils/fbPixel';
+import { handlePricingAnchorClick, PRICING_HREF } from '../utils/pricingNav';
 
 // Import course images
 import aiCodingImg from '../assets/images/courses/ai-coding.jpg';
@@ -15,6 +16,7 @@ import viralContentImg from '../assets/images/courses/viral-content.jpg';
 import fiverrCareerImg from '../assets/images/courses/fiverr-career.jpg';
 import customGptImg from '../assets/images/courses/custom-gpt.jpg';
 import bubbleAppsImg from '../assets/images/courses/bubble-apps.jpg';
+import bubbleZakazivanjeImg from '../assets/images/courses/bubble-zakazivanje.png';
 import aiIntroImg from '../assets/images/courses/ai-intro.jpg';
 import englishImg from '../assets/images/courses/english.jpg';
 import etsyBusinessImg from '../assets/images/courses/etsy-business.jpg';
@@ -216,6 +218,22 @@ const courses: Course[] = [
     instructorSpace: true
   },
   {
+    id: "bubble-zakazivanje",
+    title: "Zakazivanje termina u Bubble-u – Od nule do aplikacije",
+    description: "Nauči kako da kreiraš aplikaciju za zakazivanje termina u Bubble-u od nule.",
+    icon: CalendarCheck,
+    features: [
+      { icon: <BookOpen className="w-4 h-4" />, text: "Praktični projekat" },
+      { icon: <Users className="w-4 h-4" />, text: "Od nule do aplikacije" },
+      { icon: <Clock className="w-4 h-4" />, text: "Doživotni pristup" }
+    ],
+    color: "from-blue-500 to-indigo-500",
+    level: "No-Code",
+    platform: "bubble",
+    image: bubbleZakazivanjeImg,
+    instructorSpace: true
+  },
+  {
     id: "ai-intro",
     title: "Uvod u Veštačku Inteligenciju",
     description: "Osnovni koncepti i primena veštačke inteligencije u poslovanju.",
@@ -371,10 +389,11 @@ const AvailableCoursesSection: React.FC = () => {
             Ne čekaj da ti neko drugi uzme mesto. Počni odmah!
           </p>
           <motion.a
-            href="https://nocodebalkan.thinkific.com/enroll/3569704" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            onClick={() => trackEvent('Lead', { content_name: 'Available Courses CTA', content_category: 'Courses' })}
+            href={PRICING_HREF}
+            onClick={(e) => {
+              trackEvent('Lead', { content_name: 'Available Courses CTA', content_category: 'Courses' });
+              handlePricingAnchorClick(e);
+            }}
             style={{ background: '#FF0054' }}
             className="inline-flex items-center gap-2 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-base md:text-lg hover:shadow-xl transition-all duration-300 hover:opacity-90"
             whileHover={{ scale: 1.05 }}

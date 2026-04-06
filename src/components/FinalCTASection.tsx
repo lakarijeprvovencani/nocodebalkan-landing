@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Coffee } from 'lucide-react';
+import { handlePricingAnchorClick, PRICING_HREF } from '../utils/pricingNav';
 
 const FinalCTASection: React.FC = () => {
   const handleCTAClick = () => {
@@ -64,10 +65,11 @@ const FinalCTASection: React.FC = () => {
             </h3>
 
             <motion.a
-              href="https://nocodebalkan.thinkific.com/enroll/3569704" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              onClick={handleCTAClick}
+              href={PRICING_HREF}
+              onClick={(e) => {
+                handleCTAClick();
+                handlePricingAnchorClick(e);
+              }}
               style={{ background: 'linear-gradient(to right, #FF0054, #FFAD05)' }}
               className="inline-flex items-center px-8 py-4 md:px-12 md:py-6 text-white text-lg md:text-2xl font-medium rounded-2xl shadow-lg transition-all duration-300 group relative overflow-hidden hover:opacity-90"
               whileHover={{ scale: 1.05 }}

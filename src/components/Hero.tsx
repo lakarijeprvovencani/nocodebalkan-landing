@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Layers, Sparkles, GraduationCap, Bird, Play, ArrowRight } from 'lucide-react';
 import nocodeekipaImg from '../assets/images/nocodeekipa.jpg';
+import { handlePricingAnchorClick, PRICING_HREF } from '../utils/pricingNav';
 
 const Hero: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -111,10 +112,11 @@ const Hero: React.FC = () => {
               className="hidden md:block"
             >
               <a 
-                href="https://nocodebalkan.thinkific.com/enroll/3569704" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                onClick={handleCTAClick}
+                href={PRICING_HREF}
+                onClick={(e) => {
+                  handleCTAClick();
+                  handlePricingAnchorClick(e);
+                }}
                 style={{ background: '#FF0054' }}
                 className="inline-block text-white px-6 py-3 text-base md:px-10 md:py-5 md:text-xl font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:opacity-90"
               >
@@ -245,10 +247,11 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.7 }}
             >
               <a 
-                href="https://nocodebalkan.thinkific.com/enroll/3569704" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                onClick={handleCTAClick}
+                href={PRICING_HREF}
+                onClick={(e) => {
+                  handleCTAClick();
+                  handlePricingAnchorClick(e);
+                }}
                 style={{ background: '#FF0054' }}
                 className="inline-flex items-center px-8 py-4 text-white text-base font-medium rounded-xl transform transition-all duration-300 active:scale-95 shadow-lg hover:opacity-90"
               >

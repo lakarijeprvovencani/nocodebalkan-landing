@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, Star } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
+import TestimonialImagesSlider from '../components/TestimonialImagesSlider';
 
 // Timer koji se resetuje svakih 15 minuta
 const getTimeUntilNext15Min = () => {
@@ -97,14 +98,6 @@ const WebinarPromenaPage: React.FC = () => {
     'Kako izgledaju prvih 30 dana učenja ako imaš samo sat vremena uveče',
   ];
 
-  // Isti testimonijali kao na glavnoj stranici nocodebalkan.com
-  const testimonials = [
-    { name: 'Ana Vićentić', text: 'Samo ću reći da je ovo najbolje osmišljen i realizovan kurs na koji sam naišla u stalnom istraživanju raznih edukacija. Smatram da se za mesečnu cenu kursa dobija džinovski paket svega i svačega korisnog koji je mnogo vredniji od tog novca.' },
-    { name: 'Jurica Kolobarić', text: 'U NoCode zajednicu priključio sam se 15.2.2024 godine bez ikakvog predznanja o bilo kojem NoCode programu. 3,5 mjeseca bazirao sam se samo na program Adalo i u njemu sam napravio neke aplikacije. Danas sam sa klijentom dogovorio prvu prodaju aplikacije. Za samo tri i po mjeseca od potpunog neznanja do prvog prihoda. AKO MOGU JA ZAŠTO NE BI MOGLI I VI???' },
-    { name: 'Nada Samardžić', text: 'No Code Balkan me je izuzetno inspirisao i promenio način na koji gledam na tehnologiju! Pre nekoliko meseci pridružila sam se ovoj zajednici, i moram priznati da je to bila jedna od najboljih odluka koje sam donela.' },
-    { name: 'Slađana Avramović Šešum', text: 'Odlična zajednica gde svi mentori i članovi pomažu jedni drugima, gde su mentori uvek na raspolaganju spremni da izađu u susret i sa savetima i u rešavanju problema. Sve lepo objašnjeno. Svake nedelje webinari sa aktuelnim temama, zatvorene grupe samo za članove.' },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-900 relative overflow-hidden">
       {/* Background effects - nocodebalkan stil */}
@@ -187,36 +180,12 @@ const WebinarPromenaPage: React.FC = () => {
             </ul>
           </div>
         </motion.section>
+      </div>
 
-        {/* SECTION 3: SOCIAL PROOF - isti testimonijali kao na glavnoj stranici */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="mb-16 md:mb-20"
-        >
-          <p className="text-center text-xl md:text-2xl font-bold text-white mb-2">
-            2.000+ članova je prošlo naše edukacije
-          </p>
-          <p className="text-center text-gray-400 mb-8">Šta su polaznici rekli o nama:</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.map((t, index) => (
-              <div
-                key={index}
-                className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 md:p-7"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-4 italic">"{t.text}"</p>
-                <p className="text-purple-400 font-semibold text-lg">{t.name}</p>
-              </div>
-            ))}
-          </div>
-        </motion.section>
+      {/* Testimonijali - ista sekcija kao na glavnoj stranici nocodebalkan.com */}
+      <TestimonialImagesSlider />
 
+      <div className="relative z-10 px-4 py-12 md:py-20 max-w-3xl mx-auto">
         {/* SECTION 4: WebinarJam embedded form - script MORA biti unutar wrapper div-a */}
         <motion.section
           id="webinar-form"

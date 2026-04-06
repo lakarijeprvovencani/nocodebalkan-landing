@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { usePricingHashScroll } from '../hooks/usePricingHashScroll';
 import HeroVariantB from '../components/HeroVariantB';
 import IntroSection from '../components/IntroSection';
 import FlowDiagram from '../components/FlowDiagram';
@@ -20,6 +21,7 @@ import FinalCTASection from '../components/FinalCTASection';
 import FloatingCTA from '../components/FloatingCTA';
 
 const CTAPage: React.FC = () => {
+  usePricingHashScroll();
   useEffect(() => {
     document.title = "No Code Balkan - Nauči da praviš aplikacije bez kodiranja";
   }, []);

@@ -13,7 +13,7 @@ const FAQSection: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       question: "Da li mi je potrebno prethodno iskustvo?",
-      answer: "Ne ne i ne! Ne treba ti apsolutno nikakvo prethodno isksutvo za naše edukacije. Treba ti samo računar, internet i dobra volja."
+      answer: "Ne ne i ne! Ne treba ti apsolutno nikakvo prethodno iskustvo za naše edukacije. Treba ti samo računar, internet i dobra volja."
     },
     {
       question: "Kako funkcioniše pristup kursu?",
@@ -58,6 +58,66 @@ const FAQSection: React.FC = () => {
     {
       question: "Kako da znam da sam uspešno otkazao/la pretplatu?",
       answer: "Prilikom odjave sa platforme dobićete email koji potvrđuje Vašu uspešnu odjavu. Molimo Vas da proverite i foldere kao što su Promotions, Spam, Junk ili Trash, jer se ponekad dešava da email ne stigne direktno u inbox. Ukoliko takav email nije stigao, slobodno nam pišite – rado ćemo Vam pomoći da uspešno završite proces odjave."
+    },
+    {
+      question: "Da li postoji mogućnost besplatnog testiranja edukacija na platformi?",
+      answer: "Nije moguće besplatno testiranje edukacija na platformi. Pristup svim lekcijama i materijalima platforme je moguć isključivo nakon uplate."
+    },
+    {
+      question: "Kako izgledaju edukacije i kako se prate?",
+      answer: "Edukacije se sastoje od snimljenih lekcija dostupnih 24/7. Sav sadržaj je odmah dostupan nakon uplate i možeš da ga pratiš kada god želiš, koliko god puta želiš, u sopstvenom tempu."
+    },
+    {
+      question: "Kako funkcioniše pretplata?",
+      answer: "Pretplata se obnavlja automatski na mesečnom nivou ukoliko korisnik sam ne prekine pretplatu pre isteka obračunskog perioda. Obračunski period počinje od datuma prve uplate korisnika. Ukoliko se pretplata ne otkaže od strane korisnika pre početka novog obračunskog perioda refundacija novca nije moguća."
+    },
+    {
+      question: "Šta da radim ako ne umem da otkažem pretplatu na platformi?",
+      answer: "Javi nam se putem emaila: info@nocodebalkan.com 48 sati pre isteka obračunskog perioda i mi ćemo otkazati tvoju pretplatu na vreme. Ukoliko je taj period istekao i pretplata se obnovila po automatizmu, možemo ti otkazati pretplatu za sledeći obračunski period ali ne refundiramo novac koji je naplaćen za tekuću pretplatu."
+    },
+    {
+      question: "Da li mi vraćate novac ukoliko nisam na vreme otkazao/la pretplatu?",
+      answer: "Novac ne vraćamo (ne refundiramo) u slučaju neblagovremenog otkaza pretplate. Pretplatu je potrebno otkazati pre početka novog obračunskog perioda. Javite nam se putem emaila: info@nocodebalkan.com 48 sati pre isteka obračunskog perioda i mi ćemo otkazati Vašu pretplatu na vreme."
+    },
+    {
+      question: "Kako se računa obračunski period?",
+      answer: "Obračunski period počinje datumom prve tvoje uplate. Primera radi, uplatio/la si prvu pretplatu 05. u mesecu, svaka sledeća pretplata (obračunski period) će početi 05. u svakom sledećem ili narednom mesecu."
+    },
+    {
+      question: "Da li mogu da pauziram pretplatu i edukacije?",
+      answer: "Pauziranje pretplate nije moguće, jer Thinkific platforma na kojoj se nalaze naše edukacije ne podržava tu opciju. Ako trenutno nisi u mogućnosti da pratiš edukaciju, najbolje je da otkažeš pretplatu i ponovo se prijaviš kada budeš spreman/a."
+    },
+    {
+      question: "Da li mi je potrebno znanje engleskog jezika?",
+      answer: "Ne, engleski jezik nije obavezan za praćenje naših edukacija niti za rad posla kao što je posao Freelancer. Sve lekcije, materijali i podrška su dostupni na srpskom jeziku. U radu sa klijentima na Balkanu Vam nije potreban engleski jezik."
+    },
+    {
+      question: "Da li ću imati pristup novim edukacijama koje budete izbacivali tokom moje pretplate?",
+      answer: "Da, imaćeš pristup svim novim edukacijama koje budemo napravili tokom trajanja tvoje pretplate."
+    },
+    {
+      question: "Šta ako negde zapnem sa edukacijom? Kako rešavam tu situaciju?",
+      answer: "Ako zapneš sa edukacijom, ne brini! Imamo zatvorene WhatsApp i Facebook grupe članova, gde možeš razmeniti ideje, savete, znanje, mišljenja i iskustva. Tu se uvek javljaju mentori koji će ti pomoći i pružiti podršku. Uvek možeš da nam pišeš i na info@nocodebalkan.com"
+    },
+    {
+      question: "Kako radi tehnička podrška za No Code Balkan?",
+      answer: "Tehnička podrška je dostupna od 08:00h do 17:00h svim radnim danima i subotom. Piši nam na info@nocodebalkan.com i mi ćemo ti u najkraćem roku pomoći. Za vreme verskih ili državnih praznika, tehnička podrška je i dalje tu ali zadržavamo pravo da ti odgovorimo najduže u roku od 48 sati."
+    },
+    {
+      question: "Na koji način komuniciramo? Da li možemo da se čujemo telefonom?",
+      answer: "Komunikacija se odvija isključivo putem emailova. Na email odgovaramo u što kraćem vremenskom roku a najduže u roku od 24 sata. Pišete nam na info@nocodebalkan.com"
+    },
+    {
+      question: "Da li mogu da platim kao firma ili preduzeće?",
+      answer: "Uskoro će i ta opcija biti dostupna. Slobodno nam piši na info@nocodebalkan.com i daćemo ti sve informacije."
+    },
+    {
+      question: "Imate baš puno edukacija. Ne znam od koje da krenem?",
+      answer: "Kreni od edukacije Mini izazovi. Nakon toga ćeš znati šta te inspiriše i gde se osećaš motivisano. Fokusiraj se na to, a sve ostalo će prirodno doći s vremenom."
+    },
+    {
+      question: "Da li vi kao mentori nama tražite klijente?",
+      answer: "Trenutno ne tražimo klijente za tebe, ali radimo na tome da ti pružimo podršku i u toj oblasti. Naša zajednica povremeno objavljuje poslove u grupama, pa ćeš tako imati priliku da pronađeš nove mogućnosti kroz povezivanje s drugima."
     }
   ];
 

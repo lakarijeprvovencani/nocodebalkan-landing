@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Clock, DollarSign, Sparkles, Play, ArrowRight } from 'lucide-react';
+import { handlePricingAnchorClick, PRICING_HREF } from '../utils/pricingNav';
 
 const IntroSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -154,9 +155,8 @@ const IntroSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <a 
-            href="https://nocodebalkan.thinkific.com/enroll/3569704" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            href={PRICING_HREF}
+            onClick={handlePricingAnchorClick}
             style={{ background: '#FF0054' }}
             className="inline-flex items-center px-8 py-4 text-white text-base font-medium rounded-xl transform transition-all duration-300 active:scale-95 shadow-lg hover:opacity-90"
           >

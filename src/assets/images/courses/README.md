@@ -15,11 +15,12 @@ Ovaj folder sadrži slike za sve dostupne kurseve.
 9. `fiverr-career.jpg` - Postani Frilenser i Započni Karijeru na Fiverr-u
 10. `custom-gpt.jpg` - Napravi Svoj Custom GPT
 11. `bubble-apps.jpg` - Uvod u Web Aplikacije Bez Kodiranja (Bubble)
-12. `ai-intro.jpg` - Uvod u Veštačku Inteligenciju
-13. `figma.jpg` - Figma sajtovi za početnike i profesionalce
-14. `english.jpg` - Engleski jezik od početnika do profesionalca
-15. `etsy-business.jpg` - Pokreni svoj biznis na Etsy-ju
-16. `weekly-calls.jpg` - Weekly Call Recordings
+12. `bubble-zakazivanje.png` - Zakazivanje termina u Bubble-u – Od nule do aplikacije
+13. `ai-intro.jpg` - Uvod u Veštačku Inteligenciju
+14. `figma.jpg` - Figma sajtovi za početnike i profesionalce
+15. `english.jpg` - Engleski jezik od početnika do profesionalca
+16. `etsy-business.jpg` - Pokreni svoj biznis na Etsy-ju
+17. `weekly-calls.jpg` - Weekly Call Recordings
 
 ## Format slika:
 - Format: JPG ili PNG

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { navigateToPricingSection } from '../utils/pricingNav';
 
 const FloatingCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -72,7 +73,7 @@ const FloatingCTA: React.FC = () => {
         content_category: 'Sign Up'
       });
     }
-    window.open('https://nocodebalkan.thinkific.com/enroll/3569704', '_blank');
+    navigateToPricingSection();
   };
 
   return (

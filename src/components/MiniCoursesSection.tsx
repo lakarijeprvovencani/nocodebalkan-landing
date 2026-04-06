@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Zap, Globe, Music, FileText, MessageCircle, Image, Clock } from 'lucide-react';
+import { handlePricingAnchorClick, PRICING_HREF } from '../utils/pricingNav';
 
 interface MiniCourse {
   id: string;
@@ -192,7 +193,8 @@ const MiniCoursesSection: React.FC = () => {
           transition={{ delay: 0.4 }}
         >
           <motion.a
-            href="https://nocodebalkan.thinkific.com/enroll/3569704" target="_blank" rel="noopener noreferrer"
+            href={PRICING_HREF}
+            onClick={handlePricingAnchorClick}
             style={{ background: '#FF0054' }}
             className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 text-white font-medium rounded-lg text-base md:text-lg shadow-lg transition-all duration-300 hover:opacity-90"
             whileHover={{ scale: 1.05 }}

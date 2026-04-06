@@ -64,6 +64,7 @@ const DanZaljubljenihPage: React.FC = () => {
     { name: "Pravljenje Web Sajtova bez koda", price: 149 },
     { name: "AI Kodiranje - Vibe Coding", price: 149 },
     { name: "Uvod u Web Aplikacije (softvere) bez kodiranja", price: 149 },
+    { name: "Zakazivanje termina u Bubble-u – Od nule do aplikacije", price: 149 },
     { name: "A.I. ChatBot sa vašom bazom znanja", price: 100 },
     { name: "Uvod u veštačku inteligenciju", price: 149 },
     { name: "Postani Frilenser i Započni karijeru na Fiverr-u", price: 149 },
@@ -149,7 +150,7 @@ const DanZaljubljenihPage: React.FC = () => {
           className="text-center mb-6"
         >
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            💝 PAKET OD <span className="text-pink-500">13 KURSEVA</span> 💝
+            💝 PAKET OD <span className="text-pink-500">14 KURSEVA</span> 💝
           </h1>
           <motion.div 
             className="inline-block bg-gradient-to-r from-pink-500 via-red-500 to-pink-500 text-white text-2xl md:text-4xl font-bold px-8 py-4 rounded-2xl transform -rotate-2 shadow-2xl shadow-pink-500/30"

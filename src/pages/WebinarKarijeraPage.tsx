@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, Star, HelpCircle } from 'lucide-react';
+import { CheckCircle, ArrowRight, HelpCircle } from 'lucide-react';
+import TestimonialImagesSlider from '../components/TestimonialImagesSlider';
 
 const getTimeUntilNext15Min = () => {
   const now = new Date();
@@ -99,11 +100,6 @@ const WebinarKarijeraPage: React.FC = () => {
       heading: '"Da li je ovo prevara?"',
       text: '2.000+ članova sa imenima i prezimenom. Članovi zajednice imaju svoje Facebook profile koje možeš sam da proveriš. Na webinaru ćeš videti njihove projekte.',
     },
-  ];
-
-  const testimonials = [
-    { name: 'Ana Vićentić', text: 'Samo ću reći da je ovo najbolje osmišljen i realizovan kurs na koji sam naišla u stalnom istraživanju raznih edukacija. Smatram da se za mesečnu cenu kursa dobija džinovski paket svega i svačega korisnog koji je mnogo vredniji od tog novca.' },
-    { name: 'Jurica Kolobarić', text: 'U NoCode zajednicu priključio sam se 15.2.2024 godine bez ikakvog predznanja o bilo kojem NoCode programu. 3,5 mjeseca bazirao sam se samo na program Adalo i u njemu sam napravio neke aplikacije. Danas sam sa klijentom dogovorio prvu prodaju aplikacije. Za samo tri i po mjeseca od potpunog neznanja do prvog prihoda. AKO MOGU JA ZAŠTO NE BI MOGLI I VI???' },
   ];
 
   return (
@@ -229,40 +225,22 @@ const WebinarKarijeraPage: React.FC = () => {
             ))}
           </div>
         </motion.section>
+      </div>
 
-        {/* SECTION 5: SOCIAL PROOF */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.6 }}
-          className="mb-16 md:mb-20"
-        >
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <span className="px-4 py-2 bg-purple-500/20 border border-purple-500/40 rounded-full text-white font-semibold">
-              2.000+ članova
-            </span>
-            <span className="px-4 py-2 bg-blue-500/20 border border-blue-500/40 rounded-full text-white font-semibold">
-              Prosečna satnica na Upwork-u: 18–21 USD (oko 2.100–2.500 din/sat)
-            </span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.map((t, index) => (
-              <div
-                key={index}
-                className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 md:p-7"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-4 italic">"{t.text}"</p>
-                <p className="text-purple-400 font-semibold text-lg">{t.name}</p>
-              </div>
-            ))}
-          </div>
-        </motion.section>
+      {/* Numbers strip + Testimonijali - ista sekcija kao na glavnoj stranici nocodebalkan.com */}
+      <div className="relative z-10">
+        <div className="flex flex-wrap justify-center gap-4 py-8 px-4 bg-gray-900/80">
+          <span className="px-4 py-2 bg-purple-500/20 border border-purple-500/40 rounded-full text-white font-semibold">
+            2.000+ članova
+          </span>
+          <span className="px-4 py-2 bg-blue-500/20 border border-blue-500/40 rounded-full text-white font-semibold">
+            Prosečna satnica na Upwork-u: 18–21 USD (oko 2.100–2.500 din/sat)
+          </span>
+        </div>
+        <TestimonialImagesSlider />
+      </div>
 
+      <div className="relative z-10 px-4 py-12 md:py-20 max-w-3xl mx-auto">
         {/* SECTION 6: FORM */}
         <motion.section
           id="webinar-form"
