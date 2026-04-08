@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Gift, Loader2, CheckCircle, Sparkles, AlertCircle } from 'lucide-react';
+import { X, Gift, Loader2, Sparkles, AlertCircle } from 'lucide-react';
+
+const WEBINAR_YEARLY_OFFER_URL =
+  'https://nocodebalkan.thinkific.com/enroll/3623700?coupon=god249';
 
 const ExitIntentPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     email: '',
@@ -86,11 +88,7 @@ const ExitIntentPopup: React.FC = () => {
       });
 
       if (response.ok) {
-        setIsSuccess(true);
-        // Close popup after 3 seconds
-        setTimeout(() => {
-          setIsVisible(false);
-        }, 3000);
+        window.location.assign(WEBINAR_YEARLY_OFFER_URL);
       } else {
         setError('Došlo je do greške. Molimo pokušajte ponovo.');
         console.error('Webhook error:', response.status, response.statusText);
@@ -150,18 +148,18 @@ const ExitIntentPopup: React.FC = () => {
               </button>
 
               <div className="relative p-6 md:p-8">
-                {!isSuccess ? (
-                  <>
                     {/* Header */}
                     <div className="text-center mb-6">
                       <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#FF0054] to-purple-600 rounded-full mb-4">
                         <Gift className="w-8 h-8 text-white" />
                       </div>
                       <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                        Hej, kad si već tu! 🎁
+                        Ponuda sa webinara
                       </h2>
-                      <p className="text-gray-300 text-sm md:text-base">
-                        Ostavi kontakt i dobij <span className="text-[#FF0054] font-bold">kupon za popust</span> na prvi mesec pretplate!
+                      <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                        Iskoristi ponudu sa webinara za{' '}
+                        <span className="text-[#FF0054] font-bold">uštedu od $550</span> na godišnjem paketu.
+                        Ostavi podatke ispod — odmah te vodimo na stranicu prijave sa primenjenim kuponom.
                       </p>
                     </div>
 
@@ -237,7 +235,7 @@ const ExitIntentPopup: React.FC = () => {
                         ) : (
                           <>
                             <Sparkles className="w-5 h-5" />
-                            Pošalji mi kupon!
+                            Iskoristi ponudu
                           </>
                         )}
                       </button>
@@ -246,29 +244,6 @@ const ExitIntentPopup: React.FC = () => {
                     <p className="text-center text-gray-500 text-xs mt-4">
                       Tvoji podaci su sigurni i nećemo ih deliti sa trećim licima.
                     </p>
-                  </>
-                ) : (
-                  /* Success State */
-                  <div className="text-center py-8">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: "spring", duration: 0.5 }}
-                      className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full mb-6"
-                    >
-                      <CheckCircle className="w-10 h-10 text-white" />
-                    </motion.div>
-                    <h3 className="text-2xl font-bold text-white mb-3">
-                      Odlično! 🎉
-                    </h3>
-                    <p className="text-gray-300">
-                      Kupon kod je na putu ka tvom email-u!
-                    </p>
-                    <p className="text-gray-400 text-sm mt-2">
-                      Proveri inbox za par minuta.
-                    </p>
-                  </div>
-                )}
               </div>
             </div>
           </motion.div>
