@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code2, Bot, Globe2, Video } from 'lucide-react';
+import { handlePricingAnchorClick, PRICING_HREF } from '../utils/pricingNav';
 
 const CTASection: React.FC = () => {
   const features = [
@@ -108,17 +109,18 @@ const CTASection: React.FC = () => {
           transition={{ delay: 0.5 }}
         >
           <motion.a
-            href="https://nocodebalkan.thinkific.com/enroll/3569704" target="_blank" rel="noopener noreferrer"
+            href={PRICING_HREF}
+            onClick={handlePricingAnchorClick}
             style={{ background: '#FF0054' }}
             className="inline-flex items-center px-8 py-4 text-white font-medium rounded-lg text-lg shadow-lg transition-all duration-300 group hover:opacity-90"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Započni svoje putovanje
+            Započni učenje
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
           <p className="mt-4 text-gray-400">
-            Cena je manja od jedne kafe dnevno. Odjavi se kad god hoćeš.
+            Odjavi se kad god hoćeš.
           </p>
         </motion.div>
       </div>

@@ -231,7 +231,7 @@ const MembershipBenefitsSection: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Želim da započnem edukaciju
+            Započni učenje
           </motion.a>
         </motion.div>
       </div>

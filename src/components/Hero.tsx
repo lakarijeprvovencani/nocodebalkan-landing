@@ -120,10 +120,10 @@ const Hero: React.FC = () => {
                 style={{ background: '#FF0054' }}
                 className="inline-block text-white px-6 py-3 text-base md:px-10 md:py-5 md:text-xl font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:opacity-90"
               >
-                Želim da naučim kako
+                Započni učenje
               </a>
               <p className="mt-4 md:mt-4 text-gray-400 text-sm md:text-base">
-                Cena je manja od jedne kafe dnevno. Odjavi se kad god hoćeš.
+                Odjavi se kad god hoćeš.
               </p>
             </motion.div>
           </motion.div>
@@ -255,7 +255,7 @@ const Hero: React.FC = () => {
                 style={{ background: '#FF0054' }}
                 className="inline-flex items-center px-8 py-4 text-white text-base font-medium rounded-xl transform transition-all duration-300 active:scale-95 shadow-lg hover:opacity-90"
               >
-                Želim da naučim kako!
+                Započni učenje
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </motion.div>

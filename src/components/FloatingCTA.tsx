@@ -95,7 +95,7 @@ const FloatingCTA: React.FC = () => {
                 {/* Text content */}
                 <div className="flex-1 text-center md:text-left">
                   <p className="text-white font-bold text-base md:text-lg lg:text-xl mb-1">
-                    Započni promenu po ceni manjoj od jedne kafe dnevno!
+                    Pristup svim kursevima i zajednici.
                   </p>
                   <p className="text-white/90 text-xs md:text-sm">
                     Odjavi se kad god hoćeš • Pristup svim kursevima
@@ -109,7 +109,7 @@ const FloatingCTA: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-[#FF0054] font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl text-sm md:text-base lg:text-lg flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap"
                 >
-                  Započni sada
+                  Započni učenje
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                 </motion.button>
               </div>

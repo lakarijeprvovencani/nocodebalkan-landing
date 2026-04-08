@@ -160,7 +160,7 @@ const IntroSection: React.FC = () => {
             style={{ background: '#FF0054' }}
             className="inline-flex items-center px-8 py-4 text-white text-base font-medium rounded-xl transform transition-all duration-300 active:scale-95 shadow-lg hover:opacity-90"
           >
-            Želim da naučim kako!
+            Započni učenje
             <ArrowRight className="ml-2 w-5 h-5" />
           </a>
         </motion.div>

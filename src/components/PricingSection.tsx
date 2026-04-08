@@ -10,6 +10,8 @@ const CHECKOUT_YEARLY =
 const CHECKOUT_LIFETIME =
   'https://nocodebalkan.thinkific.com/enroll/3590656?price_id=4526401';
 
+const CALENDLY_CONSULT_URL = 'https://calendly.com/no-code-asistent/30min';
+
 const features = [
   'Pristup svim postojećim i novim kursevima',
   'Pristup zatvorenoj chat grupi',
@@ -181,6 +183,16 @@ const PricingSection: React.FC = () => {
                   >
                     Započni učenje
                     <ArrowRight className="ml-2 w-5 h-5 md:w-6 md:h-6 group-hover/btn:translate-x-1 transition-transform" />
+                  </motion.a>
+                  <motion.a
+                    href={CALENDLY_CONSULT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center justify-center w-full px-3 py-2.5 md:px-4 md:py-3 text-gray-200 text-xs md:text-sm font-medium text-center leading-snug rounded-xl border border-purple-400/50 hover:bg-purple-500/15 hover:border-purple-300 transition-all duration-300"
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
+                  >
+                    Imaš dodatnih pitanja? Zakaži 15 minuta konsultacija sa nama.
                   </motion.a>
                 </div>
               </div>

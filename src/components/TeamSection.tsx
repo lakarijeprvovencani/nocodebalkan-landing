@@ -242,11 +242,11 @@ const TeamSection: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Započni svoje putovanje
+            Započni učenje
             <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
           <p className="mt-3 md:mt-4 text-gray-400 text-sm md:text-base">
-            Cena je manja od jedne kafe dnevno. Odjavi se kad god hoćeš.
+            Odjavi se kad god hoćeš.
           </p>
         </motion.div>
       </div>

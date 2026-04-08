@@ -152,7 +152,7 @@ const RoditeljiPage: React.FC = () => {
                   <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </a>
                 <p className="text-gray-400 text-sm md:text-base">
-                  Cena je manja od jedne kafe dnevno
+                  Odjavi se kad god hoćeš.
                 </p>
               </motion.div>
             </motion.div>
@@ -599,7 +599,7 @@ const RoditeljiPage: React.FC = () => {
               Veštine koje donose finansijsku nezavisnost već sada.
             </p>
             <p className="text-lg md:text-xl text-gray-400 mb-8">
-              Cena je manja od jedne kafe dnevno. Odjavi se kad god hoćeš.
+              Odjavi se kad god hoćeš.
             </p>
 
             <a
@@ -610,7 +610,7 @@ const RoditeljiPage: React.FC = () => {
               style={{ background: '#FF0054' }}
               className="inline-flex items-center px-12 py-6 md:px-16 md:py-8 text-white text-xl md:text-2xl font-bold rounded-2xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:opacity-90 group mb-6"
             >
-              Započnite putovanje sada
+              Započni učenje
               <ArrowRight className="ml-4 w-7 h-7 group-hover:translate-x-2 transition-transform" />
             </a>
 
