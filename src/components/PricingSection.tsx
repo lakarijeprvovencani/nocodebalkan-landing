@@ -114,7 +114,7 @@ const PricingSection: React.FC = () => {
             Koja je cena, je l&apos; te to muči?
           </h2>
           <p className="text-base md:text-xl text-gray-300 mb-3 md:mb-4 max-w-3xl mx-auto">
-            Tri načina da uđeš u zajednicu — mesečno, godišnje ili jednom zauvek. Isti sadržaj i beneficije.
+            Tri načina da uđeš u zajednicu — mesečno, godišnje ili jednom zauvek. Isti sadržaj i pogodnosti.
           </p>
           <p className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto">
             I da, imaš pristup svemu, svakom kursu bez ikakvih skrivenih troškova.
