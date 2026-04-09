@@ -151,9 +151,6 @@ const RoditeljiPage: React.FC = () => {
                   Dajte tinejdžeru priliku za finansijsku nezavisnost
                   <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </a>
-                <p className="text-gray-400 text-sm md:text-base">
-                  Odjavi se kad god hoćeš.
-                </p>
               </motion.div>
             </motion.div>
           </div>
@@ -595,11 +592,8 @@ const RoditeljiPage: React.FC = () => {
             <p className="text-xl md:text-2xl text-gray-300 mb-4">
               Ne igrice koje troše vreme dok završava školu.
             </p>
-            <p className="text-xl md:text-2xl text-blue-400 font-bold mb-4">
+            <p className="text-xl md:text-2xl text-blue-400 font-bold mb-8">
               Veštine koje donose finansijsku nezavisnost već sada.
-            </p>
-            <p className="text-lg md:text-xl text-gray-400 mb-8">
-              Odjavi se kad god hoćeš.
             </p>
 
             <a

@@ -97,9 +97,6 @@ const FloatingCTA: React.FC = () => {
                   <p className="text-white font-bold text-base md:text-lg lg:text-xl mb-1">
                     Pristup svim kursevima i zajednici.
                   </p>
-                  <p className="text-white/90 text-xs md:text-sm">
-                    Odjavi se kad god hoćeš • Pristup svim kursevima
-                  </p>
                 </div>
 
                 {/* CTA Button */}

@@ -249,9 +249,6 @@ const CareerSection: React.FC = () => {
             Započni učenje
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
-          <p className="mt-4 text-gray-400">
-            Odjavi se kad god hoćeš.
-          </p>
         </motion.div>
       </div>
     </section>

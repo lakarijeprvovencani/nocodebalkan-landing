@@ -122,9 +122,6 @@ const Hero: React.FC = () => {
               >
                 Započni učenje
               </a>
-              <p className="mt-4 md:mt-4 text-gray-400 text-sm md:text-base">
-                Odjavi se kad god hoćeš.
-              </p>
             </motion.div>
           </motion.div>
 

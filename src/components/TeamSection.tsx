@@ -245,9 +245,6 @@ const TeamSection: React.FC = () => {
             Započni učenje
             <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
-          <p className="mt-3 md:mt-4 text-gray-400 text-sm md:text-base">
-            Odjavi se kad god hoćeš.
-          </p>
         </motion.div>
       </div>
     </section>

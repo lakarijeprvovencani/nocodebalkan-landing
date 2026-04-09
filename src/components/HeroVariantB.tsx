@@ -123,9 +123,6 @@ const HeroVariantB: React.FC = () => {
               >
                 Započni učenje
               </a>
-              <p className="mt-4 md:mt-4 2xl:mt-6 text-gray-400 text-sm md:text-base 2xl:text-lg">
-                Odjavi se kad god hoćeš.
-              </p>
             </motion.div>
           </motion.div>
 
