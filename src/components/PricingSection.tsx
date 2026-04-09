@@ -46,8 +46,8 @@ const plans: Plan[] = [
     id: 'yearly',
     title: 'Godišnja pretplata',
     price: '$799',
-    priceSuffix: 'godišnje',
-    footnote: 'P.s. Pretplatu možeš prekinuti u svakom trenutku.',
+    priceSuffix: '',
+    footnote: '',
     href: CHECKOUT_YEARLY,
     fbValue: 799,
   },
@@ -146,7 +146,9 @@ const PricingSection: React.FC = () => {
                   <h3 className="text-lg md:text-xl text-gray-300 mb-4 md:mb-6">{plan.title}</h3>
                   <div className="inline-flex items-baseline justify-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">
                     <span className="text-3xl md:text-5xl font-bold">{plan.price}</span>
-                    <span className="text-base md:text-xl">{plan.priceSuffix}</span>
+                    {plan.priceSuffix ? (
+                      <span className="text-base md:text-xl">{plan.priceSuffix}</span>
+                    ) : null}
                   </div>
                 </div>
 
@@ -170,7 +172,9 @@ const PricingSection: React.FC = () => {
                 </div>
 
                 <div className="text-center mt-auto">
-                  <p className="text-xs md:text-sm text-gray-400 mb-4 md:mb-6">{plan.footnote}</p>
+                  {plan.footnote ? (
+                    <p className="text-xs md:text-sm text-gray-400 mb-4 md:mb-6">{plan.footnote}</p>
+                  ) : null}
                   <motion.a
                     href={plan.href}
                     target="_blank"

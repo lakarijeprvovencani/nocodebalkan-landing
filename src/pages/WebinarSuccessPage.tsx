@@ -7,13 +7,14 @@ const WebinarSuccessPage: React.FC = () => {
     document.title = "Uspešna prijava za webinar - No Code Balkan";
   }, []);
 
-  const webinarLink = "https://event.webinarjam.com/6yy69/register/1yy64cpv";
+  const webinarLink =
+    'https://event.webinarjam.com/6yy69/register/g44zpf6m?webinar_id=57';
   const shareText = "Pridruži mi se večeras na webinaru: " + webinarLink;
 
   const shareLinks = {
     whatsapp: `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`,
     viber: `viber://forward?text=${encodeURIComponent(shareText)}`,
-    messenger: `https://www.facebook.com/dialog/send?app_id=1093599662013232&link=${encodeURIComponent(webinarLink)}&redirect_uri=${encodeURIComponent(window.location.origin + '/uspesna-prijava-za-webinar')}`
+    messenger: `https://www.facebook.com/dialog/send?app_id=1093599662013232&link=${encodeURIComponent(webinarLink)}&redirect_uri=${encodeURIComponent(window.location.origin + '/uspesna-prijava-za-webinar-everwebinar')}`
   };
 
   const handleShare = (platform: 'whatsapp' | 'viber' | 'messenger') => {
