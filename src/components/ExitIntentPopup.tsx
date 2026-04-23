@@ -5,6 +5,8 @@ import { X, Gift, Loader2, Sparkles, AlertCircle } from 'lucide-react';
 const WEBINAR_YEARLY_OFFER_URL =
   'https://nocodebalkan.thinkific.com/enroll/3623700?coupon=god249';
 
+const CALENDLY_CONSULT_URL = 'https://calendly.com/no-code-asistent/30min';
+
 const ExitIntentPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
@@ -153,14 +155,21 @@ const ExitIntentPopup: React.FC = () => {
                       <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#FF0054] to-purple-600 rounded-full mb-4">
                         <Gift className="w-8 h-8 text-white" />
                       </div>
-                      <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                        Ponuda sa webinara
+                      <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                        Iskoristi ponudu sa webinara.
                       </h2>
-                      <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                        Iskoristi ponudu sa webinara za{' '}
-                        <span className="text-[#FF0054] font-bold">uštedu od $550</span> na godišnjem paketu.
-                        Ostavi podatke ispod — odmah te vodimo na stranicu prijave sa primenjenim kuponom.
-                      </p>
+                      <div className="text-gray-300 text-sm md:text-base leading-relaxed space-y-3 text-left">
+                        <p>
+                          🎁 Naš poklon kod{' '}
+                          <span className="text-[#FF0054] font-bold">GOD249</span> te vodi do godišnje
+                          pretplate od <span className="text-white font-semibold">249 dolara</span> umesto{' '}
+                          <span className="text-white font-semibold">799 dolara</span>.
+                        </p>
+                        <p>
+                          Uštedi <span className="text-[#FF0054] font-bold">550 dolara</span> i iskoristi ih za
+                          nešto drugo.
+                        </p>
+                      </div>
                     </div>
 
                     {/* Error message */}
@@ -244,6 +253,21 @@ const ExitIntentPopup: React.FC = () => {
                     <p className="text-center text-gray-500 text-xs mt-4">
                       Tvoji podaci su sigurni i nećemo ih deliti sa trećim licima.
                     </p>
+
+                    <div className="mt-5 pt-5 border-t border-gray-700/50 text-center">
+                      <p className="text-sm text-gray-400 mb-2">
+                        Nisi siguran da li je pravi trenutak?
+                      </p>
+                      <a
+                        href={CALENDLY_CONSULT_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-purple-300 hover:text-purple-200 text-sm font-medium transition-colors"
+                      >
+                        Zakaži besplatne 15 minuta konsultacija
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    </div>
               </div>
             </div>
           </motion.div>
