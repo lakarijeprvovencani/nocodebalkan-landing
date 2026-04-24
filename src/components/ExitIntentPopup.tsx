@@ -256,7 +256,7 @@ const ExitIntentPopup: React.FC = () => {
 
                     <div className="mt-5 pt-5 border-t border-gray-700/50 text-center">
                       <p className="text-sm text-gray-400 mb-2">
-                        Nisi siguran da li je pravi trenutak?
+                        Misliš da nije pravi trenutak i ne znaš da li je za tebe?
                       </p>
                       <a
                         href={CALENDLY_CONSULT_URL}
@@ -264,7 +264,7 @@ const ExitIntentPopup: React.FC = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-purple-300 hover:text-purple-200 text-sm font-medium transition-colors"
                       >
-                        Zakaži besplatne 15 minuta konsultacija
+                        Zakaži besplatnu konsultaciju od 15 minuta!
                         <span aria-hidden="true">→</span>
                       </a>
                     </div>
