@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, Loader2, AlertCircle, ArrowRight } from 'lucide-react';
+import { X, Phone, ArrowRight } from 'lucide-react';
 
 const CALENDLY_CONSULT_URL = 'https://calendly.com/no-code-asistent/30min';
 const WEBINAR_YEARLY_OFFER_URL =
@@ -9,13 +9,6 @@ const WEBINAR_YEARLY_OFFER_URL =
 const ExitIntentPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [formData, setFormData] = useState({
-    email: '',
-    first_name: '',
-    last_name: '',
-  });
 
   useEffect(() => {
     if (window.location.pathname.includes('novogodisnjaakcija')) {
@@ -67,53 +60,18 @@ const ExitIntentPopup: React.FC = () => {
     }
   }, [hasShown]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
-
-    try {
-      const response = await fetch(
-        'https://hook.eu2.make.com/am7r411qrbc1gy4cfomv6uqx6j9vdwqc',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ ...formData, source: 'popup_consultation' }),
-        }
-      );
-
-      if (response.ok) {
-        if (typeof window !== 'undefined' && (window as any).fbq) {
-          (window as any).fbq('track', 'Lead', {
-            content_name: 'Exit Popup - Consultation',
-            content_category: 'Consultation',
-          });
-        }
-        window.location.assign(CALENDLY_CONSULT_URL);
-      } else {
-        setError('Došlo je do greške. Molimo pokušajte ponovo.');
-        console.error('Webhook error:', response.status, response.statusText);
-      }
-    } catch (err) {
-      console.error('Error submitting form:', err);
-      setError(
-        'Došlo je do greške pri slanju. Proverite internet konekciju i pokušajte ponovo.'
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   const handleClose = () => {
+    setIsVisible(false);
+  };
+
+  const handleBookCall = () => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Exit Popup - Consultation',
+        content_category: 'Consultation',
+      });
+    }
+    window.open(CALENDLY_CONSULT_URL, '_blank', 'noopener,noreferrer');
     setIsVisible(false);
   };
 
@@ -192,101 +150,24 @@ const ExitIntentPopup: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Error message */}
-                {error && (
-                  <div className="mb-4 p-3 bg-red-500/10 border border-red-500/50 rounded-lg flex items-center gap-2 text-red-400 text-sm">
-                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
-                    <span>{error}</span>
-                  </div>
-                )}
-
-                {/* Form */}
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <label
-                        htmlFor="first_name"
-                        className="block text-sm font-medium text-gray-300 mb-1.5"
-                      >
-                        Ime
-                      </label>
-                      <input
-                        type="text"
-                        id="first_name"
-                        name="first_name"
-                        value={formData.first_name}
-                        onChange={handleChange}
-                        required
-                        placeholder="Marko"
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF0054]/50 focus:border-[#FF0054] transition-all"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="last_name"
-                        className="block text-sm font-medium text-gray-300 mb-1.5"
-                      >
-                        Prezime
-                      </label>
-                      <input
-                        type="text"
-                        id="last_name"
-                        name="last_name"
-                        value={formData.last_name}
-                        onChange={handleChange}
-                        required
-                        placeholder="Marković"
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF0054]/50 focus:border-[#FF0054] transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-300 mb-1.5"
-                    >
-                      Email adresa
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="marko@example.com"
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF0054]/50 focus:border-[#FF0054] transition-all"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 bg-gradient-to-r from-[#FF0054] to-purple-600 hover:from-[#FF0054]/90 hover:to-purple-600/90 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2 shadow-lg shadow-[#FF0054]/25"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                        Šaljem...
-                      </>
-                    ) : (
-                      <>
-                        <Phone
-                          className="w-5 h-5"
-                          strokeWidth={2.2}
-                          fill="currentColor"
-                          style={{ transform: 'rotate(15deg)' }}
-                        />
-                        Zakaži poziv
-                        <ArrowRight className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
-                </form>
+                {/* Primary CTA */}
+                <button
+                  type="button"
+                  onClick={handleBookCall}
+                  className="w-full py-4 bg-gradient-to-r from-[#FF0054] to-purple-600 hover:from-[#FF0054]/90 hover:to-purple-600/90 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-2 shadow-lg shadow-[#FF0054]/25"
+                >
+                  <Phone
+                    className="w-5 h-5"
+                    strokeWidth={2.2}
+                    fill="currentColor"
+                    style={{ transform: 'rotate(15deg)' }}
+                  />
+                  Zakaži poziv
+                  <ArrowRight className="w-4 h-4" />
+                </button>
 
                 <p className="text-center text-gray-500 text-xs mt-4">
-                  Tvoji podaci su sigurni i nećemo ih deliti sa trećim licima.
+                  Termin biraš sam u kalendaru — bez registracije.
                 </p>
               </div>
             </div>
