@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ConsultationBanner from './components/ConsultationBanner';
 import ExitIntentPopup from './components/ExitIntentPopup';
+import MobileCallFAB from './components/MobileCallFAB';
 import HomePage from './pages/HomePage';
 import HomePageVariantB from './pages/HomePageVariantB';
 import CTAPage from './pages/CTAPage';
@@ -41,6 +42,7 @@ function App() {
               <HomePageVariantB />
               <Footer />
               <ExitIntentPopup />
+              <MobileCallFAB />
             </div>
           } />
           <Route path="/heronaslov" element={
@@ -49,6 +51,7 @@ function App() {
               <HomePageVariantB />
               <Footer />
               <ExitIntentPopup />
+              <MobileCallFAB />
             </>
           } />
           <Route path="/cta" element={
@@ -67,24 +70,28 @@ function App() {
               <CTAPage />
               <Footer />
               <ExitIntentPopup />
+              <MobileCallFAB />
             </div>
           } />
           <Route path="/lifetime" element={
             <>
               <LifetimePage />
               <ExitIntentPopup />
+              <MobileCallFAB />
             </>
           } />
           <Route path="/roditelji" element={
             <>
               <RoditeljiPage />
               <ExitIntentPopup />
+              <MobileCallFAB />
             </>
           } />
           <Route path="/konsultacije" element={
             <>
               <KonsultacijePage />
               <ExitIntentPopup />
+              <MobileCallFAB />
             </>
           } />
           <Route path="/uslovi-koriscenja" element={
@@ -92,6 +99,7 @@ function App() {
               <PolitikaPrivatnosti />
               <Footer />
               <ExitIntentPopup />
+              <MobileCallFAB />
             </>
           } />
           <Route path="/pozivi" element={
@@ -101,6 +109,7 @@ function App() {
               <PoziviPage />
               <Footer />
               <ExitIntentPopup />
+              <MobileCallFAB />
             </>
           } />
           <Route path="/uspesna-prijava-za-webinar-everwebinar" element={
