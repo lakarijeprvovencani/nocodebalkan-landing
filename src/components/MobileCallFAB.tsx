@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Headphones } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 const CALENDLY_CONSULT_URL = 'https://calendly.com/no-code-asistent/30min';
 
@@ -85,7 +85,12 @@ const MobileCallFAB: React.FC = () => {
             className="absolute inset-0 rounded-full bg-[#FF0054]/40 animate-ping"
           />
           <span className="relative flex items-center justify-center w-full h-full rounded-full">
-            <Headphones className="w-6 h-6" strokeWidth={2.2} />
+            <Phone
+              className="w-6 h-6"
+              strokeWidth={2.2}
+              fill="currentColor"
+              style={{ transform: 'rotate(15deg)' }}
+            />
           </span>
         </motion.button>
       )}
