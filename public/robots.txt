@@ -1,4 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
+User-agent: Google-adstxt
+Allow: /app-ads.txt
+Disallow:
+
 User-agent: *
 Allow: /
 
